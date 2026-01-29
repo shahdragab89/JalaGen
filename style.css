@@ -1,0 +1,151 @@
+/* General Styles to reset defaults */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Main container for the split-screen layout */
+.container {
+    display: flex;
+    height: 100vh; /* Full viewport height */
+    width: 100%;
+}
+
+/* ----- Left Section Styles ----- */
+/* ----- Left Section Styles ----- */
+.left-section {
+    flex: 1.2;
+    /* Updated Gradient: Vertical blend from Sky Blue to Bright Cyan */
+    background: linear-gradient(180deg, #4facfe 0%, #00f2fe 100%);
+    
+    display: flex;
+    align-items: center; 
+    padding: 80px; /* Increased padding slightly for better spacing */
+}
+
+.left-section .content {
+    color: white;
+    max-width: 550px; /* Slightly wider to let the paragraph breathe */
+}
+
+.left-section h1 {
+    font-size: 56px; /* Increased size to match the boldness of the image */
+    font-weight: 700;
+    margin-bottom: 25px;
+    line-height: 1.1; /* Tighter line height for the two-line stack */
+}
+
+.left-section p {
+    font-size: 18px;
+    line-height: 1.6;
+    opacity: 0.9;
+    font-weight: 400;
+}
+/* ----- Right Section Styles ----- */
+.right-section {
+    flex: 1; /* Takes up less space */
+    background-color: white;
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+}
+
+.login-box {
+    width: 100%;
+    max-width: 380px; /* Limit the width of the form */
+    padding: 40px;
+    text-align: center;
+}
+
+.login-box h2 {
+    color: #4dd0e1; /* Teal color */
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 40px;
+    letter-spacing: 1px;
+}
+
+/* Styles for input fields and their container */
+.input-group {
+    display: flex;
+    align-items: center;
+    background-color: #eef1f8; /* Light gray-blue background */
+    padding: 15px 20px;
+    border-radius: 50px; /* Round corners */
+    margin-bottom: 20px;
+}
+
+.input-group i {
+    color: #8ecae6; /* Light blue icon color */
+    font-size: 18px;
+    margin-right: 15px;
+}
+
+.input-group input {
+    border: none;
+    background: transparent;
+    outline: none;
+    flex: 1; /* Takes remaining space */
+    font-size: 16px;
+    color: #555;
+}
+
+.input-group input::placeholder {
+    color: #b0b8c4; /* Placeholder text color */
+}
+
+/* Styles for the LOGIN button */
+.login-btn {
+    width: 100%;
+    padding: 15px;
+    border: none;
+    border-radius: 50px;
+    background: linear-gradient(to right, #56ccf2, #2f80ed); /* Blue gradient */
+    color: white;
+    font-size: 16px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    cursor: pointer;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 15px rgba(47, 128, 237, 0.2); /* Subtle shadow */
+    transition: transform 0.2s ease;
+}
+
+.login-btn:hover {
+    transform: translateY(-2px); /* Slight lift on hover */
+}
+
+/* Styles for the "Forgot password?" link */
+.forgot-link {
+    display: inline-block;
+    color: #b0b8c4;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.forgot-link:hover {
+    color: #2f80ed;
+}
+
+/* Responsive design for smaller screens (tablets and phones) */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column; /* Stack sections vertically */
+        height: auto;
+    }
+
+    .left-section {
+        padding: 40px 20px;
+        text-align: center;
+    }
+
+    .left-section h1 {
+        font-size: 36px;
+    }
+
+    .right-section {
+        padding: 40px 20px;
+    }
+}
