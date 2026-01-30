@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JalaGen - Adult Registration</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="backg">
+        <a href="signup-choice.html" class="back-link"><i class="fa-solid fa-arrow-left"></i> Back</a>
+
+        <div class="left-content">
+            <h2>Efficiency & Control</h2>
+            <p><strong>Manage your household water impact.</strong></p>
+            <p>Track bills, monitor usage, and lead your family toward a sustainable future.</p>
+        </div>
+
+        <div class="WRec scrollable">
+            <h1>CREATE ACCOUNT</h1>
+            
+            <div class="input-container">
+    <i class="fa-solid fa-user icon"></i>
+    <input type="text" placeholder="Full Name">
+</div>
+
+<div class="input-container">
+    <i class="fa-solid fa-id-badge icon"></i>
+    <input type="text" placeholder="Username">
+</div>
+
+<div class="input-row">
+    <div class="input-container half">
+        <i class="fa-solid fa-phone icon"></i>
+        <input type="tel" placeholder="Phone Number">
+    </div>
+    <div class="input-container half">
+        <i class="fa-solid fa-cake-candles icon"></i>
+        <input type="number" placeholder="Age">
+    </div>
+</div>
+
+<div class="input-container">
+    <i class="fa-solid fa-location-dot icon"></i>
+    <input type="text" placeholder="Address">
+</div>
+             <div class="input-container">
+                <i class="fa-solid fa-envelope icon"></i>
+                <input type="email" placeholder="Email">
+            </div>
+
+            <div class="input-container">
+                <i class="fa-solid fa-key icon"></i>
+                <input type="password" oninput="checkStrength(this.value)" placeholder="Create Password">
+                <div class="strength-wrapper"><div id="strength-bar"></div></div>
+            </div>
+
+            <div class="input-container"><i class="fa-solid fa-circle-check icon"></i><input type="password" placeholder="Confirm Password"></div>
+            
+            <button class="login-btn">SIGN UP NOW</button>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

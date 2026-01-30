@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JalaGen - Kid Registration</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="backg">
+        <a href="signup-choice.html" class="back-link"><i class="fa-solid fa-arrow-left"></i> Back</a>
+
+        <div class="left-content">
+            <h2>Welcome Future Heroes!</h2>
+            <p><strong>Let's start up your profile.</strong></p>
+            <p>Every hero needs a name and a secret code to join the JalaGen mission.</p>
+        </div>
+
+        <div class="WRec">
+            <h1>CREATE ACCOUNT</h1>
+            
+            <div class="input-container">
+                <i class="fa-solid fa-user icon"></i>
+                <input type="text" placeholder="Nickname">
+            </div>
+
+            <div class="input-container">
+                <i class="fa-solid fa-cake-candles icon"></i>
+                <input type="number" placeholder="How old are you?">
+            </div>
+
+            <div class="input-container">
+                <i class="fa-solid fa-envelope-open-text icon"></i>
+                <input type="email" placeholder="Parent's Email">
+            </div>
+
+            <div class="input-container">
+                <i class="fa-solid fa-key icon"></i>
+                <input type="password" id="pass" placeholder="Create Password" oninput="checkStrength(this.value)">
+                <div class="strength-wrapper"><div id="strength-bar"></div></div>
+            </div>
+
+            <div class="input-container">
+                <i class="fa-solid fa-circle-check icon"></i>
+                <input type="password" placeholder="Confirm Password">
+            </div>
+            
+            <button class="login-btn adventure">START THE ADVENTURE</button>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

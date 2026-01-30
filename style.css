@@ -1,151 +1,176 @@
-/* General Styles to reset defaults */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+  /* Background covers the entire screen */
+  background-image: url('IGT LOGin backg.jpeg'); 
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed; /* Keeps bg still while scrolling */
+  height: 100vh;
+  display: flex;
+  align-items: center;
 }
 
-/* Main container for the split-screen layout */
-.container {
-    display: flex;
-    height: 100vh; /* Full viewport height */
-    width: 100%;
+.backg {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
 }
 
-/* ----- Left Section Styles ----- */
-/* ----- Left Section Styles ----- */
-.left-section {
-    flex: 1.2;
-    /* Updated Gradient: Vertical blend from Sky Blue to Bright Cyan */
-    background: linear-gradient(180deg, #4facfe 0%, #00f2fe 100%);
-    
-    display: flex;
-    align-items: center; 
-    padding: 80px; /* Increased padding slightly for better spacing */
+.WRec {
+  width: 35%;
+  height: 100vh;
+  /* Removed white background to show the bubbles through the right side */
+  /* background-color: rgba(255, 255, 255, 0.15); Very light glass effect */
+  /* backdrop-filter: blur(10px);  */
+  position: absolute;
+  top: 0;
+  right: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  /* box-shadow: -10px 0 30px rgba(0,0,0,0.1); */
+  /* border-left: 1px solid rgba(255, 255, 255, 0.3); */
 }
 
-.left-section .content {
+.left-content {
+  width: 60%;
+  padding-left: 80px;
+  color: white;
+}
+
+.left-content h2 {
+  font-size: 4rem;
+  margin-bottom: 0;
+  text-shadow: 2px 2px 10px rgba(0,0,0,0.2);
+}
+
+h1 {
+  font-family: 'Nunito', sans-serif;
+  color: #2ec4b6; /* Teal color from JalaGen brief */
+  margin-bottom: 30px;
+}
+
+.input-container {
+  width: 75%;
+  position: relative;
+  margin: 12px 0;
+}
+
+.input-container input {
+  width: 100%;
+  padding: 15px 15px 15px 45px;
+  border: 1px solid rgba(255, 255, 255, 0.5); /* Subtle border */
+  background-color: rgba(240, 242, 248, 0.9); /* Slightly transparent input */
+  border-radius: 50px;
+  font-size: 16px;
+  outline: none;
+  box-sizing: border-box;
+}
+
+.icon {
+  position: absolute;
+  left: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #2ec4b6;
+  font-size: 18px;
+}
+
+button.login-btn {
+  width: 40%; /* Smaller width as requested */
+  padding: 12px;
+  margin-top: 25px;
+  border: none;
+  border-radius: 50px;
+  background: linear-gradient(to right, #2ec4b6, #1ca7ec); 
+  color: white;
+  font-weight: bold;
+  font-size: 14px;
+  cursor: pointer;
+  transition: 0.3s;
+  box-shadow: 0 4px 15px rgba(28, 167, 236, 0.3);
+}
+
+button.login-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(28, 167, 236, 0.4);
+}
+
+.signup-link {
+  margin-top: 25px;
+  font-size: 14px;
+  color: #444;
+}
+
+.signup-link a {
+  color: #1ca7ec;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.signup-link a:hover {
+  text-decoration: underline;
+}
+
+/* Back Link Top Left */
+.back-link {
+    position: absolute;
+    top: 30px;
+    left: 40px;
     color: white;
-    max-width: 550px; /* Slightly wider to let the paragraph breathe */
-}
-
-.left-section h1 {
-    font-size: 56px; /* Increased size to match the boldness of the image */
-    font-weight: 700;
-    margin-bottom: 25px;
-    line-height: 1.1; /* Tighter line height for the two-line stack */
-}
-
-.left-section p {
-    font-size: 18px;
-    line-height: 1.6;
-    opacity: 0.9;
-    font-weight: 400;
-}
-/* ----- Right Section Styles ----- */
-.right-section {
-    flex: 1; /* Takes up less space */
-    background-color: white;
-    display: flex;
-    justify-content: center; /* Center horizontally */
-    align-items: center; /* Center vertically */
-}
-
-.login-box {
-    width: 100%;
-    max-width: 380px; /* Limit the width of the form */
-    padding: 40px;
-    text-align: center;
-}
-
-.login-box h2 {
-    color: #4dd0e1; /* Teal color */
-    font-size: 24px;
-    font-weight: 600;
-    margin-bottom: 40px;
-    letter-spacing: 1px;
-}
-
-/* Styles for input fields and their container */
-.input-group {
-    display: flex;
-    align-items: center;
-    background-color: #eef1f8; /* Light gray-blue background */
-    padding: 15px 20px;
-    border-radius: 50px; /* Round corners */
-    margin-bottom: 20px;
-}
-
-.input-group i {
-    color: #8ecae6; /* Light blue icon color */
-    font-size: 18px;
-    margin-right: 15px;
-}
-
-.input-group input {
-    border: none;
-    background: transparent;
-    outline: none;
-    flex: 1; /* Takes remaining space */
-    font-size: 16px;
-    color: #555;
-}
-
-.input-group input::placeholder {
-    color: #b0b8c4; /* Placeholder text color */
-}
-
-/* Styles for the LOGIN button */
-.login-btn {
-    width: 100%;
-    padding: 15px;
-    border: none;
-    border-radius: 50px;
-    background: linear-gradient(to right, #56ccf2, #2f80ed); /* Blue gradient */
-    color: white;
-    font-size: 16px;
-    font-weight: 700;
-    letter-spacing: 1px;
-    cursor: pointer;
-    margin-bottom: 20px;
-    box-shadow: 0 4px 15px rgba(47, 128, 237, 0.2); /* Subtle shadow */
-    transition: transform 0.2s ease;
-}
-
-.login-btn:hover {
-    transform: translateY(-2px); /* Slight lift on hover */
-}
-
-/* Styles for the "Forgot password?" link */
-.forgot-link {
-    display: inline-block;
-    color: #b0b8c4;
     text-decoration: none;
-    font-size: 14px;
+    font-weight: bold;
+    z-index: 10;
 }
 
-.forgot-link:hover {
-    color: #2f80ed;
+/* Password Strength Bar */
+.strength-wrapper {
+    width: 100%;
+    height: 5px;
+    background: #ddd;
+    border-radius: 5px;
+    margin-top: 5px;
+    overflow: hidden;
 }
 
-/* Responsive design for smaller screens (tablets and phones) */
-@media (max-width: 768px) {
-    .container {
-        flex-direction: column; /* Stack sections vertically */
-        height: auto;
-    }
+#strength-bar {
+    height: 100%;
+    width: 0%;
+    transition: 0.4s;
+}
 
-    .left-section {
-        padding: 40px 20px;
-        text-align: center;
-    }
+/* Scrollable Right Side for long forms */
+.WRec.scrollable {
+    overflow-y: auto;
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
 
-    .left-section h1 {
-        font-size: 36px;
-    }
+/* Hero Button Color */
+button.adventure {
+  background: linear-gradient(to right, #2ec4b6, #1ca7ec); 
+    font-size: 12px;
+}
 
-    .right-section {
-        padding: 40px 20px;
-    }
+/* Container for side-by-side inputs */
+.input-row {
+    display: flex;
+    width: 75%; /* Matches your standard input-container width */
+    gap: 15px;
+    margin: 12px 0;
+}
+
+/* Adjusting containers when they are in a row */
+.input-container.half {
+    width: 100%; /* Spans half of the flex-row */
+    margin: 0;   /* Removes the default vertical margin */
+}
+
+/* Ensure icons remain aligned in small boxes */
+.input-container.half input {
+    padding-left: 40px; /* Slightly tighter padding for side-by-side */
 }

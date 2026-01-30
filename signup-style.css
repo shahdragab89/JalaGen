@@ -1,0 +1,135 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    background-image: url('IGT LOGin backg.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.selection-card {
+    width: 420px;
+    /* Darker frosted glass for better contrast */
+    background: rgba(255, 255, 255, 0.85); 
+    backdrop-filter: blur(10px);
+    padding: 50px 40px;
+    border-radius: 40px;
+    text-align: center;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.4);
+}
+
+.logo-text {
+    font-size: 2.8rem;
+    /* Deep Water Blue for visibility */
+    color: #1a3a5a; 
+    margin: 0;
+    font-family: 'Nunito', sans-serif;
+    font-weight: 800;
+}
+
+.main-title {
+    color: #2c3e50; /* Strong dark grey/blue */
+    margin-top: 5px;
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+.subtitle {
+    color: #0e6b63; /* Darker teal for readability */
+    margin-bottom: 35px;
+    font-size: 1.1rem;
+    font-weight: 500;
+}
+
+.choices-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.choice-box {
+    display: flex;
+    align-items: center;
+    background: #ffffff;
+    padding: 18px 25px;
+    border-radius: 25px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    border: 2px solid #e0e0e0;
+}
+
+.choice-box:hover {
+    transform: translateX(10px);
+    border-color: #1ca7ec;
+    background: #f0faff;
+}
+
+.icon-circle {
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px;
+    color: white;
+    margin-right: 20px;
+    flex-shrink: 0;
+}
+
+/* JalaGen Brand Colors - Darkened for visibility */
+.kid-bg { background: #f39c12; }   /* Darker Gold */
+.teen-bg { background: #16a085; }  /* Deep Teal */
+.adult-bg { background: #2980b9; } /* Strong Blue */
+
+.text-info {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+}
+
+.text-info .title {
+    font-weight: 700;
+    color: #1a3a5a; /* High contrast dark blue */
+    font-size: 1.2rem;
+}
+
+.text-info .age {
+    font-size: 0.9rem;
+    color: #555; /* Mid-grey for secondary info */
+    font-weight: 500;
+}
+
+.login-footer {
+    margin-top: 30px;
+    color: #333;
+    font-size: 0.95rem;
+}
+
+.login-footer a {
+    color: #1ca7ec;
+    font-weight: 700;
+    text-decoration: none;
+    margin-left: 5px;
+}
+
+.login-footer a:hover {
+    text-decoration: underline;
+}
+
+.logo-image {
+    width: 180px; /* Adjust size based on your logo's dimensions */
+    height: auto;
+    margin-bottom: 10px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* You can now remove or comment out the .logo-text class if it's no longer used */
