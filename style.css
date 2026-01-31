@@ -2,11 +2,10 @@ body {
   margin: 0;
   padding: 0;
   font-family: 'Poppins', sans-serif;
-  /* Background covers the entire screen */
   background-image: url('IGT LOGin backg.jpeg'); 
   background-size: cover;
   background-position: center;
-  background-attachment: fixed; /* Keeps bg still while scrolling */
+  background-attachment: fixed; 
   height: 100vh;
   display: flex;
   align-items: center;
@@ -22,7 +21,6 @@ body {
 .WRec {
   width: 35%;
   height: 100vh;
-  /* Removed white background to show the bubbles through the right side */
   /* background-color: rgba(255, 255, 255, 0.15); Very light glass effect */
   /* backdrop-filter: blur(10px);  */
   position: absolute;
@@ -50,7 +48,7 @@ body {
 
 h1 {
   font-family: 'Nunito', sans-serif;
-  color: #2ec4b6; /* Teal color from JalaGen brief */
+  color: #2ec4b6; 
   margin-bottom: 30px;
 }
 
@@ -81,7 +79,7 @@ h1 {
 }
 
 button.login-btn {
-  width: 40%; /* Smaller width as requested */
+  width: 40%; 
   padding: 12px;
   margin-top: 25px;
   border: none;
@@ -159,18 +157,18 @@ button.adventure {
 /* Container for side-by-side inputs */
 .input-row {
     display: flex;
-    width: 75%; /* Matches your standard input-container width */
+    width: 75%; 
     gap: 15px;
     margin: 12px 0;
 }
 
 /* Adjusting containers when they are in a row */
 .input-container.half {
-    width: 100%; /* Spans half of the flex-row */
-    margin: 0;   /* Removes the default vertical margin */
+    width: 100%; 
+    margin: 0;  
 }
 
 /* Ensure icons remain aligned in small boxes */
 .input-container.half input {
-    padding-left: 40px; /* Slightly tighter padding for side-by-side */
+    padding-left: 40px; 
 }
