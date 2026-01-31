@@ -1,157 +1,97 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    
-    <title>Jala Gen - Homepage</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
-
-        body {
-            background-color: #f9f9f9;
-            color: #333;
-        }
-
-        nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 20px 50px;
-            background-color: white;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
-            border-bottom: 2px solid #eee; 
-        }
-
-        .logo {
-            font-size: 24px;
-            font-weight: bold;
-            color: #004aad;
-        }
-
-        .nav-links {
-            list-style: none;
-            display: flex;
-            gap: 30px;
-        }
-
-        .nav-links a {
-            text-decoration: none;
-            color: #555;
-            font-size: 18px;
-            position: relative;
-        }
-        .nav-links a.active {
-            color: #004aad;
-            font-weight: bold;
-        }
-        .nav-links a.active::after {
-            content: '';
-            position: absolute;
-            width: 120%;
-            height: 120%;
-            border: 2px solid #004aad;
-            border-radius: 50%;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            opacity: 0.3;
-        }
-
-        .login-btn {
-            text-decoration: none;
-            color: #333;
-            font-weight: bold;
-            border-bottom: 2px solid #333; 
-        }
-        .hero {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 50px;
-            height: 80vh; 
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        
-        .hero-text {
-            flex: 1;
-            padding-right: 20px;
-        }
-
-        .hero-text h1 {
-            font-size: 64px; 
-            line-height: 1.2;
-            margin-bottom: 30px;
-            color: #004aad;
-        }
-
-        .cta-button {
-            display: inline-block;
-            padding: 15px 40px;
-            font-size: 20px;
-            border: 3px solid #004aad; 
-            background-color: transparent;
-            color: #004aad;
-            cursor: pointer;
-            text-decoration: none;
-            transition: 0.3s;
-            border-radius: 5px; 
-        }
-
-        .cta-button:hover {
-            background-color: #004aad;
-            color: white;
-        }
-
-        .hero-image {
-            flex: 1;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 400px;
-            background-color: #e0e0e0;
-            border: 2px dashed #999; 
-            color: #666;
-            font-size: 24px;
-            border-radius: 10px;
-            overflow: hidden;
-        }
-        
-        .hero-image img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JalaGen - Every Drop Counts</title>
+    <link rel="stylesheet" href="home-style.css">
 </head>
 <body>
 
     <nav>
-        <div class="logo">Jala Gen</div>
-        <ul class="nav-links">
-            <li><a href="#" class="active">Home</a></li>
-            <li><a href="#">About</a></li>
-            <li><a href="#">Learn</a></li>
+        <div class="logo-container">
+            <img src="logo.png" alt="JalaGen Logo" class="nav-logo">
+        </div>
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#features">Features</a></li>
+            <li><a href="#contact">Contact Us</a></li>
         </ul>
-        <a href="#" class="login-btn">Login</a>
+        <button class="login-btn gradient-style">LOGIN</button>
     </nav>
 
-    <section class="hero">
+    <section id="home" class="hero">
         <div class="hero-text">
-            <h1>Every drop<br>Counts ...</h1>
-            <a href="#" class="cta-button">Get Start</a>
+            <h1>Every Drop Counts.<br>Manage Your Water, Master and Impact</h1>
+            <p>Empowering the Egyptian family with fun, education, and control.</p>
+            <button class="get-started gradient-style">GET STARTED</button>
         </div>
-
         <div class="hero-image">
-            <span>Image Area</span>
-             </div>
+            <img src="home.svg" alt="Water Connectivity Illustration">
+        </div>
     </section>
+
+    <section id="about" class="world-chooser background-image-section">
+        <h2>CHOOSE YOUR WORLD</h2>
+        <div class="card-container">
+            <div class="card kids">
+                <div class="icon-img"><img src="kids-icon.svg" alt="Kids"></div>
+                <h3>KIDS ZONE</h3>
+                <p>Interactive Stories<br>Mini-Games</p>
+                <button class="gradient-style">START THE ADVENTURE</button>
+            </div>
+            <div class="card teen">
+                <div class="icon-img"><img src="teen-icon.svg" alt="Teens"></div>
+                <h3>TEEN ZONE</h3>
+                <p>Impact & Lifestyle<br>Daily Challenges</p>
+                <button class="gradient-style">JOIN THE MISSION</button>
+            </div>
+            <div class="card adult">
+                <div class="icon-img"><img src="adult-icon.svg" alt="Adults"></div>
+                <h3>ADULT</h3>
+                <p>Efficiency & Control<br>Usage Monitor</p>
+                <button class="gradient-style">MANAGE HOME</button>
+            </div>
+        </div>
+    </section>
+
+    <section id="features" class="features">
+        <h2>CORE FEATURES</h2>
+        <div class="feature-container">
+            <div class="feature-item">
+                <div class="icon-circle play">🎮</div>
+                <h3>Play</h3>
+                <p>Engaging games that teach sustainability.</p>
+            </div>
+            <div class="feature-item">
+                <div class="icon-circle read">📚</div>
+                <h3>Read</h3>
+                <p>Explore stories of water conservation.</p>
+            </div>
+            <div class="feature-item">
+                <div class="icon-circle think">💡</div>
+                <h3>Think</h3>
+                <p>Smart analytics for your water usage.</p>
+            </div>
+            <div class="feature-item">
+                <div class="icon-circle win">⭐</div>
+                <h3>Win</h3>
+                <p>Earn badges for being a Water Guardian.</p>
+            </div>
+        </div>
+    </section>
+
+    <footer id="contact">
+        <div class="contact-content">
+            <h3>Contact Us</h3>
+            <p>Have questions? Reach out to our team!</p>
+            <p><strong>Email:</strong> customerservice@jalagen.com</p>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2026 JalaGen | <a href="#">Privacy Policy</a></p>
+        </div>
+    </footer>
 
 </body>
 </html>
