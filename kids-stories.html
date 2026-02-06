@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+<meta charset="UTF-8">
+<title>فيديوهات التوعية - عالم المياه</title>
+<style>
+body {
+    margin: 0;
+    font-family: 'Comic Sans MS', cursive;
+    background: linear-gradient(#b3e5fc, #e0f7fa);
+    text-align: center;
+}
+
+header {
+    padding: 40px 20px;
+}
+
+h1 {
+    color: #01579b;
+    font-size: 38px;
+}
+
+.slider-container {
+    position: relative;
+    width: 80%;
+    max-width: 800px;
+    margin: 50px auto;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+    background: white;
+}
+
+.video-slide {
+    display: none;
+}
+
+.video-slide.active {
+    display: block;
+}
+
+/* أزرار */
+.prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: 50px;
+    height: 50px;
+    margin-top: -25px;
+    color: white;
+    font-size: 30px;
+    background: rgba(0,123,255,0.7);
+    border-radius: 50%;
+    line-height: 50px;
+    text-align: center;
+    user-select: none;
+    transition: 0.3s;
+}
+
+.prev:hover, .next:hover {
+    background: rgba(0,123,255,1);
+}
+
+.prev {
+    left: 10px;
+}
+
+.next {
+    right: 10px;
+}
+
+/* فيديوهات */
+iframe {
+    width: 100%;
+    height: 450px;
+    border: none;
+}
+
+.caption {
+    padding: 10px;
+    font-size: 20px;
+    color: #0277bd;
+}
+</style>
+</head>
+<body>
+
+<header>
+    <h1>🎥 فيديوهات التوعية - عالم المياه</h1>
+    <p>تعلّم واستمتع بمشاهدة الفيديوهات التعليمية</p>
+</header>
+
+<div class="slider-container">
+
+    <!-- فيديو 1 -->
+    <div class="video-slide active">
+        <iframe src="https://www.youtube.com/embed/3JZ_D3ELwOQ" allowfullscreen></iframe>
+        <div class="caption">أهمية شرب الماء يوميًا</div>
+    </div>
+
+    <!-- فيديو 2 -->
+    <div class="video-slide">
+        <iframe src="https://www.youtube.com/embed/tgbNymZ7vqY" allowfullscreen></iframe>
+        <div class="caption">كيفية ترشيد استهلاك المياه</div>
+    </div>
+
+    <!-- فيديو 3 -->
+    <div class="video-slide">
+        <iframe src="https://www.youtube.com/embed/L3wKzyIN1yk" allowfullscreen></iframe>
+        <div class="caption">ألعاب تعليمية عن المياه</div>
+    </div>
+
+    <!-- أزرار -->
+    <div class="prev">&#10094;</div>
+    <div class="next">&#10095;</div>
+</div>
+
+<script>
+let currentSlide = 0;
+const slides = document.querySelectorAll('.video-slide');
+const total = slides.length;
+
+document.querySelector('.next').addEventListener('click', () => {
+    slides[currentSlide].classList.remove('active');
+    currentSlide = (currentSlide + 1) % total;
+    slides[currentSlide].classList.add('active');
+});
+
+document.querySelector('.prev').addEventListener('click', () => {
+    slides[currentSlide].classList.remove('active');
+    currentSlide = (currentSlide - 1 + total) % total;
+    slides[currentSlide].classList.add('active');
+});
+</script>
+
+</body>
+</html>
