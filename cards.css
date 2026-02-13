@@ -1,0 +1,107 @@
+body {
+  font-family: 'Comic Sans MS', cursive, sans-serif;
+  text-align: center;
+  background: linear-gradient(270deg, #4fc3f7, #81d4fa, #b3e5fc);
+  background-size: 600% 600%;
+  animation: bgMove 15s ease infinite;
+  margin: 0;
+  padding: 20px;
+  overflow: hidden;
+}
+
+@keyframes bgMove {
+  0% {background-position:0% 50%;}
+  50% {background-position:100% 50%;}
+  100% {background-position:0% 50%;}
+}
+
+h1 { color:#1d0869; font-size:40px; margin-bottom:20px; text-shadow:2px 2px 5px #00000055; }
+
+.info { display:flex; justify-content:center; gap:50px; margin:10px 0 20px; font-size:18px; }
+
+button {
+  padding:10px 20px; margin:5px; font-size:16px;
+  border:none; border-radius:8px; background:#0288d1; color:white; cursor:pointer;
+}
+button:hover { background:#0277bd; }
+
+.cards-container {
+  display:grid;
+  grid-template-columns: repeat(4, 150px);
+  gap:20px;
+  justify-content:center;
+  margin:20px auto;
+}
+
+.card {
+  width:150px;
+  height:150px;
+  perspective:1000px;
+  position:relative;
+}
+
+.card-inner {
+  width:100%;
+  height:100%;
+  position:relative;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+}
+
+.card.flip .card-inner { transform: rotateY(180deg); }
+
+.card-front,
+.card-back {
+  position:absolute;
+  width:100%; height:100%;
+  backface-visibility:hidden;
+  border-radius:10px;
+  overflow:hidden;
+}
+
+.card-front { background:#0288d1; }
+
+.card-back {
+  transform:rotateY(180deg);
+  background:#fff;
+}
+
+.card-back img {
+  width:100%;
+  height:100%;
+  object-fit:cover;
+}
+
+.win {
+  position:fixed; top:40%; left:50%;
+  transform:translate(-50%,-50%) scale(0);
+  background:#0d0141; color:white;
+  padding:20px 40px; font-size:30px; border-radius:15px;
+  box-shadow:0 0 20px rgba(0,0,0,0.3);
+  transition:0.5s;
+  z-index:5;
+}
+
+.win.show {
+  transform:translate(-50%,-50%) scale(1.3);
+  animation: bounce 0.6s infinite alternate;
+}
+
+@keyframes bounce {
+  from { transform:translate(-50%,-50%) scale(1.1); }
+  to { transform:translate(-50%,-50%) scale(1.4); }
+}
+
+.bubble {
+  position: absolute;
+  bottom: -50px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.7);
+  animation: rise 6s linear infinite;
+}
+
+@keyframes rise {
+  0% { transform: translateY(0) scale(0.5); opacity: 0.7; }
+  50% { opacity:1; }
+  100% { transform: translateY(-800px) scale(1.2); opacity:0; }
+}

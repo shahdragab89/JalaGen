@@ -1,16 +1,164 @@
 <!DOCTYPE html>
-<html>
+<html lang="ar">
 <head>
-    <title>Menu</title>
+<meta charset="UTF-8">
+<title>عالم المياه</title>
+
+<style>
+body {
+    margin: 0;
+    font-family: 'Comic Sans MS', cursive;
+    background: linear-gradient(#b3e5fc, #e0f7fa);
+    overflow-x: hidden;
+    text-align: center;
+}
+
+/* حركة بسيطة */
+.float {
+    animation: float 4s ease-in-out infinite;
+}
+@keyframes float {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-12px); }
+    100% { transform: translateY(0); }
+}
+
+/* العنوان */
+header {
+    padding: 70px 20px 30px;
+}
+h1 {
+    font-size: 42px;
+    color: #01579b;
+}
+p {
+    font-size: 18px;
+    color: #0277bd;
+}
+
+/* ديكوريشن */
+.decorations {
+    position: relative;
+    height: 300px;
+}
+
+.decor {
+    position: absolute;
+    width: 160px;
+    border-radius: 20px;
+}
+
+/* فقاعات */
+.bubble {
+    position: absolute;
+    bottom: -40px;
+    background: rgba(255,255,255,0.6);
+    border-radius: 50%;
+    animation: bubbles 7s linear infinite;
+}
+@keyframes bubbles {
+    from { transform: translateY(0); opacity: 1; }
+    to { transform: translateY(-500px); opacity: 0; }
+}
+
+/* قسم الفيديوهات */
+.videos {
+    background: white;
+    width: 85%;
+    margin: auto;
+    padding: 40px;
+    border-radius: 30px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+}
+
+.cards {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    margin-top: 30px;
+    flex-wrap: wrap;
+}
+
+.card {
+    width: 240px;
+    height: 190px;
+    background: linear-gradient(#4fc3f7, #81d4fa);
+    border-radius: 30px;
+    color: white;
+    text-decoration: none;
+    font-size: 22px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    box-shadow: 0 10px 0 #0288d1;
+    transition: 0.3s;
+}
+
+.card span {
+    font-size: 50px;
+    margin-bottom: 10px;
+}
+
+.card:hover {
+    transform: translateY(-10px) scale(1.05);
+    box-shadow: 0 18px 0 #0288d1;
+}
+
+/* موجة */
+.wave {
+    margin-top: 70px;
+    height: 150px;
+    background: #4fc3f7;
+    border-radius: 100% 100% 0 0;
+}
+</style>
 </head>
+
 <body>
 
-    <h1>Hi!</h1>
+<header>
+    <h1>🌊 عالم المياه 🌊</h1>
+    <p>تعلم – شاهد – استمتع</p>
+</header>
 
-    <p>What do you want to do today?</p>
 
-    <button>Story</button>
-    <button>Adventure Game</button>
+
+<section class="videos">
+    <h2>📺 قسم الفيديوهات</h2>
+
+    <div class="cards">
+        <a href="awareness.html" class="card">
+            <span>🎥</span>
+            فيديوهات توعية
+        </a>
+
+        <a href="stories.html" class="card">
+            <span>📖</span>
+            حكاية قصص
+        </a>
+    </div>
+</section>
+
+<div class="wave"></div>
+
+<script>
+/* فقاعات مية */
+function bubble() {
+    const b = document.createElement("div");
+    b.className = "bubble";
+
+    const size = Math.random() * 30 + 15;
+    b.style.width = size + "px";
+    b.style.height = size + "px";
+    b.style.left = Math.random() * 100 + "%";
+
+    document.body.appendChild(b);
+
+    setTimeout(() => b.remove(), 7000);
+}
+
+setInterval(bubble, 700);
+</script>
 
 </body>
 </html>
