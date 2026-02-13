@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JalaGen - ماذا سنفعل اليوم؟</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@700;900&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --adventure-start: #ff7e5f;
+            --adventure-end: #feb47b;
+            /* Updated Purple Shades */
+            --stories-start: #9d50bb; 
+            --stories-end: #6e48aa;
+        }
+
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            width: 100vw;
+            font-family: 'Cairo', sans-serif;
+            overflow: hidden;
+        }
+
+        .background-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background-image: url('kids-bg.png'); 
+            background-size: 100% 100%; 
+            background-position: center bottom;
+            background-repeat: no-repeat;
+            z-index: -1;
+        }
+
+        .main-wrapper {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            width: 100vw;
+            position: relative;
+        }
+
+        .hero-text-area {
+            text-align: center;
+            margin-bottom: 5vh;
+            text-shadow: 2px 2px 10px rgba(255, 255, 255, 0.9);
+            z-index: 5;
+        }
+
+        h1 {
+            color: #1a5a92;
+            font-size: 7vh;
+            margin: 0;
+            font-weight: 900;
+        }
+
+        .choice-container {
+            display: flex;
+            gap: 5vw;
+            z-index: 5;
+        }
+
+        .choice-card {
+            width: 28vw;
+            max-width: 350px;
+            border: 8px solid white;
+            border-radius: 50px;
+            padding: 40px 20px;
+            text-align: center;
+            text-decoration: none;
+            box-shadow: 0 15px 30px rgba(0,0,0,0.15); /* Softer shadow for a modern look */
+            transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .adventure-card {
+            background: linear-gradient(180deg, var(--adventure-start), var(--adventure-end));
+        }
+
+        .stories-card {
+            background: linear-gradient(180deg, var(--stories-start), var(--stories-end));
+        }
+
+        .choice-card:hover {
+            transform: translateY(-15px) scale(1.02);
+            box-shadow: 0 25px 40px rgba(0,0,0,0.2);
+        }
+
+        .illustration-box {
+            width: 150px;
+            height: 150px;
+            margin-bottom: 25px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .illustration-box img {
+            width: 100%;
+            height: auto;
+            filter: drop-shadow(0 10px 10px rgba(0,0,0,0.2));
+        }
+
+        .card-title {
+            color: white;
+            font-size: 4vh;
+            font-weight: 900;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.2);
+        }
+
+        .corner-character {
+            position: absolute;
+            bottom: -2vh; 
+            right: 0; 
+            width: 350px; 
+            z-index: 10;
+            animation: bounce-soft 4s ease-in-out infinite;
+        }
+
+        @keyframes bounce-soft {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-2vh); }
+        }
+
+        .bubble {
+            position: absolute;
+            background: rgba(255, 255, 255, 0.4);
+            border-radius: 50%;
+            pointer-events: none;
+            animation: rise 8s infinite linear;
+            z-index: 1;
+        }
+
+        @keyframes rise {
+            0% { bottom: -10%; opacity: 0; }
+            20% { opacity: 0.6; }
+            100% { bottom: 110%; transform: translateX(5vw); opacity: 0; }
+        }
+    </style>
+</head>
+<body>
+    <div class="background-container"></div>
+    <div class="main-wrapper">
+        <div class="hero-text-area">
+            <h1>ماذا تريد أن تفعل الآن؟</h1>
+        </div>
+        <div class="choice-container">
+            <a href="map.html" class="choice-card adventure-card">
+                <div class="illustration-box">
+                    <img src="rocket.png" alt="Adventure">
+                </div>
+                <div class="card-title">ابدأ المغامرة</div>
+            </a>
+            <a href="stories.html" class="choice-card stories-card">
+                <div class="illustration-box">
+                    <img src="book.png" alt="Stories">
+                </div>
+                <div class="card-title">شاهد القصص</div>
+            </a>
+        </div>
+        <img src="wants.png" alt="Waving Drop" class="corner-character">
+    </div>
+    <script>
+        function createBubble() {
+            const bubble = document.createElement('div');
+            bubble.className = 'bubble';
+            const size = (Math.random() * 5 + 2) + 'vh';
+            bubble.style.width = size;
+            bubble.style.height = size;
+            bubble.style.left = Math.random() * 100 + 'vw';
+            bubble.style.animationDuration = Math.random() * 4 + 6 + 's';
+            document.body.appendChild(bubble);
+            setTimeout(() => { bubble.remove(); }, 8000);
+        }
+        setInterval(createBubble, 1200);
+    </script>
+</body>
+</html>

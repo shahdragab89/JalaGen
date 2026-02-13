@@ -1,137 +1,310 @@
 <!DOCTYPE html>
-<html lang="ar">
+<html lang="ar" dir="rtl">
 <head>
-<meta charset="UTF-8">
-<title>فيديوهات التوعية - عالم المياه</title>
-<style>
-body {
-    margin: 0;
-    font-family: 'Comic Sans MS', cursive;
-    background: linear-gradient(#b3e5fc, #e0f7fa);
-    text-align: center;
-}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="referrer" content="no-referrer-when-downgrade">
+    
+    <title>قصص جالا جين الممتعة</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@700;900&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --card-bg: #ffffff;
+            --purple-accent: #8e44ad;
+            --navy-blue: #1a5a92; 
+            --text-color: #2c3e50;
+        }
 
-header {
-    padding: 40px 20px;
-}
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Cairo', sans-serif;
+            background-image: url('kids-bg.png'); 
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            background-repeat: no-repeat;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            color: white;
+            overflow-x: hidden;
+        }
 
-h1 {
-    color: #01579b;
-    font-size: 38px;
-}
+        .top-nav {
+            width: 100%;
+            padding: 10px 20px; /* Reduced padding */
+            display: flex;
+            justify-content: flex-start;
+            z-index: 101;
+        }
 
-.slider-container {
-    position: relative;
-    width: 80%;
-    max-width: 800px;
-    margin: 50px auto;
-    border-radius: 20px;
-    overflow: hidden;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
-    background: white;
-}
+        .back-link {
+            color: var(--navy-blue);
+            text-decoration: none;
+            font-weight: 900;
+            font-size: 1rem;
+            background: rgba(255,255,255,0.9);
+            padding: 8px 20px;
+            border-radius: 25px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            margin-right: 20px;
+        }
 
-.video-slide {
-    display: none;
-}
+        .main-header-container {
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 40px; /* Smaller radius */
+            border: 4px solid #fff;
+            padding: 15px 40px; /* Reduced padding */
+            margin-bottom: 25px; /* Reduced margin */
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            max-width: 85%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px; /* Reduced gap */
+        }
 
-.video-slide.active {
-    display: block;
-}
+        .title-row {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 20px; /* Reduced gap */
+            width: 100%;
+        }
 
-/* أزرار */
-.prev, .next {
-    cursor: pointer;
-    position: absolute;
-    top: 50%;
-    width: 50px;
-    height: 50px;
-    margin-top: -25px;
-    color: white;
-    font-size: 30px;
-    background: rgba(0,123,255,0.7);
-    border-radius: 50%;
-    line-height: 50px;
-    text-align: center;
-    user-select: none;
-    transition: 0.3s;
-}
+        .title-row img {
+            width: 120px; /* Smaller icon size */
+            height: auto;
+            filter: drop-shadow(0 4px 8px rgba(0,0,0,0.1));
+        }
 
-.prev:hover, .next:hover {
-    background: rgba(0,123,255,1);
-}
+        h1 { 
+            color: var(--navy-blue); 
+            font-size: 2.8rem; /* Reduced font size */
+            margin: 0; 
+        }
 
-.prev {
-    left: 10px;
-}
+        .stats-row {
+            display: flex;
+            gap: 30px; /* Reduced gap */
+            border-top: 2px solid rgba(26, 90, 146, 0.1);
+            padding-top: 10px; /* Reduced padding */
+            width: 100%;
+            justify-content: center;
+        }
 
-.next {
-    right: 10px;
-}
+        .stat-item {
+            color: var(--navy-blue);
+            font-weight: 900;
+            font-size: 1.1rem; /* Reduced font size */
+            text-align: center;
+        }
 
-/* فيديوهات */
-iframe {
-    width: 100%;
-    height: 450px;
-    border: none;
-}
+        .stat-item span {
+            display: inline-block;
+            font-size: 0.85rem; /* Reduced font size */
+            margin-right: 6px;
+            opacity: 0.8;
+            font-weight: 700;
+        }
 
-.caption {
-    padding: 10px;
-    font-size: 20px;
-    color: #0277bd;
-}
-</style>
+        .video-grid {
+            width: 95%;
+            max-width: 1100px;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px; /* Adjusted gap */
+            padding-bottom: 60px;
+        }
+
+        .video-box {
+            background: var(--card-bg);
+            border-radius: 35px; /* Slightly smaller radius */
+            overflow: hidden;
+            box-shadow: 0 15px 30px rgba(0,0,0,0.25);
+            display: flex;
+            flex-direction: column;
+            transition: transform 0.3s ease;
+            border: 6px solid white;
+        }
+
+        .video-box:hover { transform: translateY(-10px); }
+
+        .image-container { width: 100%; height: 160px; overflow: hidden; }
+        .image-container img { width: 100%; height: 100%; object-fit: cover; }
+
+        .info-container {
+            padding: 15px;
+            text-align: center;
+            flex-grow: 1;
+            color: var(--text-color);
+        }
+
+        .info-container h3 { color: var(--purple-accent); margin-bottom: 8px; font-size: 1.2rem; }
+        .info-container p { font-size: 0.85rem; line-height: 1.4; color: #555; }
+
+        .play-btn-full {
+            background: var(--navy-blue);
+            border: none;
+            padding: 15px;
+            font-size: 1.1rem;
+            font-weight: 900;
+            cursor: pointer;
+            font-family: 'Cairo';
+            color: #ffffff;
+            transition: opacity 0.2s;
+        }
+
+        .play-btn-full:hover { opacity: 0.9; }
+
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            background: rgba(0,0,0,0.92);
+            z-index: 3000;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        .modal-body {
+            width: 90%; max-width: 800px; aspect-ratio: 16/9;
+            background: #000; border-radius: 30px; overflow: hidden;
+            border: 6px solid white;
+            position: relative;
+        }
+
+        .close-btn {
+            color: white; font-size: 16px; cursor: pointer; margin-bottom: 12px;
+            background: #e74c3c; padding: 8px 25px; border-radius: 12px; font-weight: 900;
+            border: none;
+        }
+
+        @media (max-width: 950px) { .video-grid { grid-template-columns: repeat(2, 1fr); } }
+        @media (max-width: 650px) { 
+            .video-grid { grid-template-columns: 1fr; }
+            .title-row { flex-direction: column; text-align: center; }
+            h1 { font-size: 2rem; }
+            .stats-row { flex-direction: column; gap: 5px; }
+        }
+    </style>
 </head>
 <body>
 
-<header>
-    <h1>🎥 فيديوهات التوعية - عالم المياه</h1>
-    <p>تعلّم واستمتع بمشاهدة الفيديوهات التعليمية</p>
-</header>
-
-<div class="slider-container">
-
-    <!-- فيديو 1 -->
-    <div class="video-slide active">
-        <iframe src="https://www.youtube.com/embed/3JZ_D3ELwOQ" allowfullscreen></iframe>
-        <div class="caption">أهمية شرب الماء يوميًا</div>
+    <div class="top-nav">
+        <a href="index.html" class="back-link">← عودة للرئيسية</a>
     </div>
 
-    <!-- فيديو 2 -->
-    <div class="video-slide">
-        <iframe src="https://www.youtube.com/embed/tgbNymZ7vqY" allowfullscreen></iframe>
-        <div class="caption">كيفية ترشيد استهلاك المياه</div>
+    <div class="main-header-container">
+        <div class="title-row">
+            <h1>قصص ممتعة</h1>
+            <img src="wants.png" alt="Water Icon">
+        </div>
+        
+        <div class="stats-row">
+            <div class="stat-item">6 <span>قصص تعليمية</span></div>
+            <div class="stat-item">100% <span>محتوى آمن</span></div>
+        </div>
     </div>
 
-    <!-- فيديو 3 -->
-    <div class="video-slide">
-        <iframe src="https://www.youtube.com/embed/L3wKzyIN1yk" allowfullscreen></iframe>
-        <div class="caption">ألعاب تعليمية عن المياه</div>
+    <div class="video-grid">
+        <div class="video-box">
+            <div class="image-container"><img src="https://img.youtube.com/vi/_xmmPrvbc9I/maxresdefault.jpg" alt="نورة والماء"></div>
+            <div class="info-container">
+                <h3>نورة والماء</h3>
+                <p>تعلم مع نورة كيف نحافظ على الماء في المنزل بطرق ذكية.</p>
+            </div>
+            <button class="play-btn-full" onclick="playVideo('_xmmPrvbc9I')">شاهد الآن</button>
+        </div>
+
+        <div class="video-box">
+            <div class="image-container"><img src="https://img.youtube.com/vi/MLgpjaS6TX4/maxresdefault.jpg" alt="مغامرة قطورة"></div>
+            <div class="info-container">
+                <h3>مغامرة قطورة</h3>
+                <p>رحلة قطرة ماء صغيرة تعلمنا قيمة الماء في حياتنا.</p>
+            </div>
+            <button class="play-btn-full" onclick="playVideo('MLgpjaS6TX4')">شاهد الآن</button>
+        </div>
+
+        <div class="video-box">
+            <div class="image-container"><img src="https://img.youtube.com/vi/5yBd8EY2IG8/maxresdefault.jpg" alt="سمسم والماء"></div>
+            <div class="info-container">
+                <h3>سمسم والماء</h3>
+                <p>حلقة ممتعة من افتح يا سمسم عن ترشيد استهلاك الماء.</p>
+            </div>
+            <button class="play-btn-full" onclick="playVideo('5yBd8EY2IG8')">شاهد الآن</button>
+        </div>
+
+        <div class="video-box">
+            <div class="image-container"><img src="https://img.youtube.com/vi/pRjEBuy1xIw/maxresdefault.jpg" alt="طرق توفير المياه"></div>
+            <div class="info-container">
+                <h3>توفير المياه</h3>
+                <p>نصائح مصورة للأطفال حول كيفية تقليل استهلاك الماء بسهولة.</p>
+            </div>
+            <button class="play-btn-full" onclick="playVideo('pRjEBuy1xIw')">شاهد الآن</button>
+        </div>
+
+        <div class="video-box">
+           <div class="image-container"><img src="https://img.youtube.com/vi/TYfBDN2ZVLg/maxresdefault.jpg" alt="عمر وهنا والماء"></div>
+            <div class="info-container">
+                <h3>عمر وهنا والماء</h3>
+                <p>اكتشف مع عمر وهنا ماذا يحدث عندما ينقطع الماء وكيف نقدر قيمته.</p>
+            </div>
+            <button class="play-btn-full" onclick="playVideo('TYfBDN2VLg')">شاهد الآن</button>
+        </div>
+
+        <div class="video-box">
+            <div class="image-container"><img src="https://img.youtube.com/vi/xV8E-xxfxho/maxresdefault.jpg" alt="ليلي والماء"></div>
+            <div class="info-container">
+                <h3>ليلي والماء</h3>
+                <p>مغامرة ليلي الجميلة التي تعلمنا الحفاظ على نظافة البيئة المائية.</p>
+            </div>
+            <button class="play-btn-full" onclick="playVideo('xV8E-xxfxho')">شاهد الآن</button>
+        </div>
     </div>
 
-    <!-- أزرار -->
-    <div class="prev">&#10094;</div>
-    <div class="next">&#10095;</div>
-</div>
+    <div id="videoModal" class="modal">
+        <button class="close-btn" onclick="closeVideo()">✖ إغلاق المشغل</button>
+        <div class="modal-body" id="player"></div>
+    </div>
 
-<script>
-let currentSlide = 0;
-const slides = document.querySelectorAll('.video-slide');
-const total = slides.length;
+    <script>
+        function playVideo(id) {
+            const modal = document.getElementById('videoModal');
+            const player = document.getElementById('player');
+            
+            const origin = window.location.origin === 'null' ? '*' : window.location.origin;
 
-document.querySelector('.next').addEventListener('click', () => {
-    slides[currentSlide].classList.remove('active');
-    currentSlide = (currentSlide + 1) % total;
-    slides[currentSlide].classList.add('active');
-});
+            player.innerHTML = `
+                <iframe 
+                    width="100%" 
+                    height="100%" 
+                    src="https://www.youtube-nocookie.com/embed/${id}?autoplay=1&rel=0&enablejsapi=1&origin=${origin}" 
+                    title="YouTube video player" 
+                    frameborder="0" 
+                    referrerpolicy="no-referrer-when-downgrade"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                    allowfullscreen>
+                </iframe>`;
+            
+            modal.style.display = 'flex';
+        }
 
-document.querySelector('.prev').addEventListener('click', () => {
-    slides[currentSlide].classList.remove('active');
-    currentSlide = (currentSlide - 1 + total) % total;
-    slides[currentSlide].classList.add('active');
-});
-</script>
+        function closeVideo() {
+            document.getElementById('videoModal').style.display = 'none';
+            document.getElementById('player').innerHTML = '';
+        }
 
+        window.onclick = function(event) {
+            const modal = document.getElementById('videoModal');
+            if (event.target == modal) { 
+                closeVideo(); 
+            }
+        }
+    </script>
 </body>
 </html>
