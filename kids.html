@@ -1,125 +1,120 @@
 <!DOCTYPE html>
-<html lang="ar" dir="rtl">
+<html lang="ar">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>JalaGen - عالم الأطفال</title>
-    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@700;900&display=swap" rel="stylesheet">
-    <style>
-        :root {
-            --bright-pink: #ff5e91;
-            --sunny-yellow: #d4e157;
-        }
+<meta charset="UTF-8">
+<title>عالم المياه</title>
 
-        body, html {
-            margin: 0;
-            padding: 0;
-            height: 100%;
-            width: 100%;
-            font-family: 'Cairo', sans-serif;
-            overflow: hidden; 
-        }
+<style>
+body{
+    margin:0;
+    font-family:'Comic Sans MS', cursive;
+    background:url("kids-bg.png") no-repeat center center;
+    background-size:cover;
+    min-height:100vh;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    position:relative;
+}
 
-        /* 1. FIXED BACKGROUND - Updated to match your filename */
-        .background-container {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100vw;
-            height: 100vh;
-            /* Update 'kids-bg.jpg' to exactly match the name in your folder */
-            background-image: url('kids-bg.png'); 
-            background-size: cover; /* 'cover' ensures no gaps, '100% 100%' forces stretch */
-            background-position: center bottom;
-            background-repeat: no-repeat;
-            z-index: -1;
-        }
+/* اللوجو فوق الشمال */
+.logo{
+    position:absolute;
+    top:20px;
+    left:20px;
+    width:80px;
+}
 
-        .main-wrapper {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            width: 100vw;
-            position: relative;
-        }
+/* العنوان */
+h1{
+    font-size:48px;
+    color:#1f4e79;
+    margin-bottom:60px;
+}
 
-        .hero-text-area {
-            text-align: center;
-            margin-bottom: 5vh;
-            text-shadow: 2px 2px 10px rgba(255, 255, 255, 0.9);
-            z-index: 5;
-        }
+/* الكونتينر */
+.container{
+    display:flex;
+    gap:60px;
+    flex-wrap:wrap;
+    justify-content:center;
+}
 
-        h1 {
-            color: #1a5a92;
-            font-size: 8vh;
-            margin: 0;
-            font-weight: 900;
-        }
+/* الكروت */
+.card{
+    width:320px;
+    height:300px;
+    border-radius:30px;
+    padding:30px;
+    color:white;
+    text-decoration:none;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    font-size:26px;
+    font-weight:bold;
+    border:8px solid white;
+    box-shadow:0 15px 25px rgba(0,0,0,0.2);
+    transition:0.3s;
+}
 
-        p {
-            color: #4facfe;
-            font-size: 4vh;
-            margin: 0;
-            font-weight: 700;
-        }
+/* البنفسجي */
+.purple{
+    background:linear-gradient(145deg,#8e44ad,#6c3483);
+}
 
-        /* 3. Character stays exactly as you had it */
-        .corner-character {
-            position: absolute;
-            bottom: -2vh; 
-            right: -2vw; 
-            width: 45vw; 
-            max-width: 600px; 
-            height: auto;
-            z-index: 10;
-            animation: bounce-soft 4s ease-in-out infinite;
-        }
+/* البرتقالي */
+.orange{
+    background:linear-gradient(145deg,#ff8c66,#f4a261);
+}
 
-        @keyframes bounce-soft {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-2vh); }
-        }
+/* صورة داخل الكارت */
+.card img{
+    width:120px;
+    margin-bottom:20px;
+}
 
-        .start-btn {
-            background: linear-gradient(90deg, var(--bright-pink), var(--sunny-yellow));
-            color: white;
-            border: 0.8vh solid white;
-            padding: 2vh 8vw;
-            font-size: 4vh;
-            font-weight: 900;
-            border-radius: 10vh;
-            cursor: pointer;
-            box-shadow: 0 1.5vh 3vh rgba(255, 94, 145, 0.4);
-            transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-            text-decoration: none;
-            display: inline-block;
-            position: relative;
-            z-index: 5;
-        }
+/* تأثير hover */
+.card:hover{
+    transform:translateY(-10px) scale(1.05);
+}
 
-        .start-btn:hover {
-            transform: scale(1.1);
-            box-shadow: 0 2vh 4vh rgba(255, 94, 145, 0.5);
-        }
-    </style>
+/* الشخصية */
+.kid{
+    position:absolute;
+    right:40px;
+    bottom:20px;
+    width:220px;
+}
+</style>
 </head>
+
 <body>
 
-    <div class="background-container"></div>
+<!-- اللوجو -->
+<img src="logo.png" class="logo">
 
-    <div class="main-wrapper">
-        <div class="hero-text-area">
-            <h1>أهلاً بك!</h1>
-            <p>مستعد للمغامرة في عالم المياه؟</p>
-        </div>
-        
-        <a href="kids-start.html" class="start-btn">ابدأ الآن !</a>
+<h1>ماذا تريد أن تفعل الآن؟</h1>
 
-        <img src="hello-kid.png" alt="Waving Drop" class="corner-character">
-    </div>
+<div class="container">
+
+    <a href="stories.html" class="card purple">
+        <img src="book.png" alt="شاهد القصص">
+        شاهد القصص
+    </a>
+
+    <a href="adventure.html" class="card orange">
+        <img src="rocket.png" alt="ابدأ المغامرة">
+        ابدأ المغامرة
+    </a>
+
+</div>
+
+<!-- شخصية الطفل -->
+<img src="hello-kid.png" class="kid">
 
 </body>
 </html>
