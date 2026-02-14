@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+<meta charset="UTF-8">
+<title>فيديوهات - عالم المياه</title>
+
+<style>
+body{
+    margin:0;
+    font-family:'Comic Sans MS', cursive;
+    background:url("kids-bg.png") no-repeat center center;
+    background-size:cover;
+    min-height:100vh;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    position:relative;
+}
+
+/* اللوجو */
+.logo{
+    position:absolute;
+    top:20px;
+    left:20px;
+    width:80px;
+}
+
+/* العنوان */
+h1{
+    font-size:42px;
+    color:#1f4e79;
+    margin-bottom:60px;
+}
+
+/* الكونتينر للزراير */
+.container{
+    display:flex;
+    gap:60px;
+    flex-wrap:wrap;
+    justify-content:center;
+    background: transparent; /* مهم جداً */
+    padding:0; /* إزالة أي padding */
+}
+
+/* الزر */
+.card{
+    width:320px;
+    height:300px;
+    border-radius:30px;
+    padding:30px;
+    color:white;
+    text-decoration:none;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    font-size:26px;
+    font-weight:bold;
+    border:none; /* إزالة أي border أبيض */
+    box-shadow:0 10px 20px rgba(0,0,0,0.15); /* ظل خفيف */
+    transition:0.3s;
+}
+
+/* ألوان الكروت */
+.purple{
+    background:linear-gradient(145deg,#d187f1,#d38bf0);
+}
+
+.orange{
+    background: linear-gradient(145deg, #FFE6EE, #F3C6D6); /* نفس اللون اللي حوالين القطة */
+}
+
+
+
+/* أيقونة داخل الزر */
+.card img{
+    width:120px;
+    margin-bottom:20px;
+}
+
+/* hover effect */
+.card:hover{
+    transform:translateY(-10px) scale(1.05);
+}
+
+/* شخصية الطفل */
+.kid{
+    position:absolute;
+    right:40px;
+    bottom:20px;
+    width:220px;
+}
+</style>
+</head>
+
+<body>
+
+<!-- اللوجو -->
+<img src="logo.png" class="logo">
+
+<h1>ماذا تريد أن تشاهد؟</h1>
+
+<div class="container">
+
+    <a href="stories.html" class="card purple">
+        <img src="book.png" alt="شاهد القصص الممتعة">
+        شاهد القصص الممتعة
+    </a>
+
+    <a href="awareness.html" class="card orange">
+        <img src="vids-icon.png" alt="شاهد فيديوهات التعلم">
+        شاهد فيديوهات التعلم
+    </a>
+
+</div>
+
+
+
+</body>
+</html>
+
+
