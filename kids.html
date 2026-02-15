@@ -5,116 +5,160 @@
 <title>عالم المياه</title>
 
 <style>
-body{
-    margin:0;
-    font-family:'Comic Sans MS', cursive;
-    background:url("kids-bg.png") no-repeat center center;
-    background-size:cover;
-    min-height:100vh;
-    display:flex;
-    flex-direction:column;
-    align-items:center;
-    justify-content:center;
-    text-align:center;
-    position:relative;
+body {
+    margin: 0;
+    font-family: 'Comic Sans MS', cursive;
+    background: url("kids-bg.png") no-repeat center center;
+    background-size: cover;
+    overflow-x: hidden;
+    text-align: center;
+    min-height: 100vh;
+    position: relative;
 }
 
-/* اللوجو فوق الشمال */
-.logo{
-    position:absolute;
-    top:20px;
-    left:20px;
-    width:80px;
+/* حركة بسيطة */
+.float {
+    animation: float 4s ease-in-out infinite;
+}
+@keyframes float {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-12px); }
+    100% { transform: translateY(0); }
 }
 
 /* العنوان */
-h1{
-    font-size:48px;
-    color:#1f4e79;
-    margin-bottom:60px;
+header {
+    padding: 70px 20px 30px;
+}
+h1 {
+    font-size: 42px;
+    color: #01579b;
+}
+p {
+    font-size: 18px;
+    color: #0277bd;
 }
 
-/* الكونتينر */
-.container{
-    display:flex;
-    gap:60px;
-    flex-wrap:wrap;
-    justify-content:center;
+/* صورة الشخصية */
+.kid-character {
+    position: absolute;
+    right: 40px;
+    bottom: 80px;
+    width: 200px;
 }
 
-/* الكروت */
-.card{
-    width:320px;
-    height:300px;
-    border-radius:30px;
-    padding:30px;
-    color:white;
-    text-decoration:none;
-    display:flex;
-    flex-direction:column;
-    justify-content:center;
-    align-items:center;
-    font-size:26px;
-    font-weight:bold;
-    border:8px solid white;
-    box-shadow:0 15px 25px rgba(0,0,0,0.2);
-    transition:0.3s;
+/* قسم الفيديوهات */
+.videos {
+    background: white;
+    width: 85%;
+    margin: auto;
+    padding: 40px;
+    border-radius: 30px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
 }
 
-/* البنفسجي */
-.purple{
-    background:linear-gradient(145deg,#8e44ad,#6c3483);
+.cards {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    margin-top: 30px;
+    flex-wrap: wrap;
 }
 
-/* البرتقالي */
-.orange{
-    background:linear-gradient(145deg,#ff8c66,#f4a261);
+.card {
+    width: 240px;
+    height: 190px;
+    background: linear-gradient(#4fc3f7, #81d4fa);
+    border-radius: 30px;
+    color: white;
+    text-decoration: none;
+    font-size: 22px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    box-shadow: 0 10px 0 #0288d1;
+    transition: 0.3s;
 }
 
-/* صورة داخل الكارت */
-.card img{
-    width:120px;
-    margin-bottom:20px;
+.card span {
+    font-size: 50px;
+    margin-bottom: 10px;
 }
 
-/* تأثير hover */
-.card:hover{
-    transform:translateY(-10px) scale(1.05);
+.card:hover {
+    transform: translateY(-10px) scale(1.05);
+    box-shadow: 0 18px 0 #0288d1;
 }
 
-/* الشخصية */
-.kid{
-    position:absolute;
-    right:40px;
-    bottom:20px;
-    width:220px;
+/* موجة */
+.wave {
+    margin-top: 70px;
+    height: 150px;
+    background: #4fc3f7;
+    border-radius: 100% 100% 0 0;
+}
+
+/* فقاعات */
+.bubble {
+    position: absolute;
+    bottom: -40px;
+    background: rgba(255,255,255,0.6);
+    border-radius: 50%;
+    animation: bubbles 7s linear infinite;
+}
+@keyframes bubbles {
+    from { transform: translateY(0); opacity: 1; }
+    to { transform: translateY(-500px); opacity: 0; }
 }
 </style>
 </head>
 
 <body>
 
-<!-- اللوجو -->
-<img src="logo.png" class="logo">
+<header>
+    <h1>🌊 عالم المياه 🌊</h1>
+    <p>تعلم – شاهد – استمتع</p>
+</header>
 
-<h1>ماذا تريد أن تفعل الآن؟</h1>
+<section class="videos">
+    <h2>📺 قسم الفيديوهات</h2>
 
-<div class="container">
+    <div class="cards">
+        <a href="awareness.html" class="card">
+            <span>🎥</span>
+            فيديوهات توعية
+        </a>
 
-    <a href="stories.html" class="card purple">
-        <img src="book.png" alt="شاهد القصص">
-        شاهد القصص
-    </a>
+        <a href="stories.html" class="card">
+            <span>📖</span>
+            حكاية قصص
+        </a>
+    </div>
+</section>
 
-    <a href="adventure.html" class="card orange">
-        <img src="rocket.png" alt="ابدأ المغامرة">
-        ابدأ المغامرة
-    </a>
+<div class="wave"></div>
 
-</div>
+<!-- صورة الشخصية -->
+<img src="hello-kid.png" class="kid-character float">
 
-<!-- شخصية الطفل -->
-<img src="hello-kid.png" class="kid">
+<script>
+/* فقاعات مية */
+function bubble() {
+    const b = document.createElement("div");
+    b.className = "bubble";
+
+    const size = Math.random() * 30 + 15;
+    b.style.width = size + "px";
+    b.style.height = size + "px";
+    b.style.left = Math.random() * 100 + "%";
+
+    document.body.appendChild(b);
+
+    setTimeout(() => b.remove(), 7000);
+}
+
+setInterval(bubble, 700);
+</script>
 
 </body>
 </html>
