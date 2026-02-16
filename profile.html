@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JalaGen - Hero Profile</title>
+    <link rel="stylesheet" href="profile-style.css">
+</head>
+<body>
+
+    <nav>
+        <div class="logo-container">
+            <img src="logo.png" alt="JalaGen Logo" class="nav-logo">
+        </div>
+        <ul>
+            <li><a href="Teenager.html">Home</a></li>
+            <li><a href="teen-articles.html">Articles</a></li>
+            <li><a href="challenge.html">Challenges</a></li>
+            <li><a href="profile.html" style="color: #18ccbc;">Profile</a></li>
+        </ul>
+        <a href="login.html">
+            <button class="login-btn gradient-style">LOGOUT</button>
+        </a>
+    </nav>
+
+    <div class="profile-container">
+        <aside class="user-sidebar">
+            <div class="avatar-circle">
+                <img src="teen-icon.svg" alt="User Avatar">
+            </div>
+            <h2 id="displayNickname">Future Hero</h2>
+            <p class="user-tag">Water Guardian Level <span id="profileLevel">1</span></p>
+            
+            <div class="info-list">
+                <div class="info-item">
+                    <span>Age:</span>
+                    <strong id="displayAge">15</strong>
+                </div>
+                <div class="info-item">
+                    <span>Rank:</span>
+                    <strong style="color: #1ca7ec;">#4</strong>
+                </div>
+            </div>
+        </aside>
+
+        <main class="profile-main">
+            <div class="stats-overview">
+                <div class="p-stat-card">
+                    <p>Total Points</p>
+                    <h3 id="profileScore">0</h3>
+                </div>
+                <div class="p-stat-card">
+                    <p>Missions Finished</p>
+                    <h3 id="profileDone">0</h3>
+                </div>
+            </div>
+
+            <section class="leaderboard-section">
+                <h3>Global Leaderboard</h3>
+                <div class="leaderboard-list">
+                    <div class="rank-item gold">
+                        <span>1</span>
+                        <p>Ahmed_Eco</p>
+                        <strong>2,450 pts</strong>
+                        <span class="badge-icon">🏆</span>
+                    </div>
+                    <div class="rank-item silver">
+                        <span>2</span>
+                        <p>Sara_Save</p>
+                        <strong>1,820 pts</strong>
+                        <span class="badge-icon">🥈</span>
+                    </div>
+                    <div class="rank-item bronze">
+                        <span>3</span>
+                        <p>NileWatcher</p>
+                        <strong>1,200 pts</strong>
+                        <span class="badge-icon">🥉</span>
+                    </div>
+                    <div class="rank-item current-user">
+                        <span>4</span>
+                        <p>You (Future Hero)</p>
+                        <strong id="userRankPoints">0 pts</strong>
+                    </div>
+                </div>
+            </section>
+
+            <section class="badge-section">
+                <h3>Badge Collection</h3>
+                <div class="badge-grid">
+                    <div class="badge-slot locked" id="badge1">
+                        <span>💧</span>
+                        <p>First Mission</p>
+                    </div>
+                    <div class="badge-slot locked" id="badge2">
+                        <span>🔥</span>
+                        <p>Streak Master</p>
+                    </div>
+                    <div class="badge-slot locked" id="badge3">
+                        <span>👔</span>
+                        <p>Top 3 Elite</p>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script src="Teenscript.js"></script>
+    <script>
+        // Special logic for profile to load data from the Signup/Global storage
+        window.addEventListener('load', () => {
+            // Updating UI from global variables in Teenscript.js
+            document.getElementById("profileScore").textContent = total;
+            document.getElementById("profileLevel").textContent = currentLevel;
+            document.getElementById("profileDone").textContent = completedTasks;
+            document.getElementById("userRankPoints").textContent = total + " pts";
+
+            // Logic to unlock the 'Elite' badge if in first 3
+            // For now, it stays locked until user reaches a score threshold
+            if (total > 50) {
+                document.getElementById('badge1').classList.remove('locked');
+            }
+        });
+    </script>
+</body>
+</html>

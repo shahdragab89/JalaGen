@@ -1,0 +1,107 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f8fbff;
+    color: #1a3a5f;
+}
+
+/* Nav Bar Same as Home */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 8%;
+    height: 70px;
+    background-color: #f0f8ff;
+    position: sticky; top: 0; z-index: 1000;
+}
+
+.nav-logo { max-height: 50px; }
+nav ul { display: flex; list-style: none; gap: 30px; }
+nav ul li a { text-decoration: none; color: #1a3a5f; font-weight: 500; }
+
+.gradient-style {
+    background: linear-gradient(90deg, #18ccbc 0%, #1ca7ec 100%) !important;
+    color: white !important; border: none !important;
+    padding: 10px 25px; border-radius: 25px; cursor: pointer;
+}
+
+/* Profile Layout */
+.profile-container {
+    display: flex;
+    max-width: 1200px;
+    margin: 40px auto;
+    gap: 30px;
+    padding: 0 20px;
+}
+
+/* Sidebar Styling */
+.user-sidebar {
+    flex: 1;
+    background: white;
+    border-radius: 24px;
+    padding: 40px 20px;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+    height: fit-content;
+}
+
+.avatar-circle {
+    width: 120px;
+    height: 120px;
+    background: #f0f8ff;
+    border-radius: 50%;
+    margin: 0 auto 20px;
+    padding: 15px;
+}
+
+.avatar-circle img { width: 100%; height: auto; }
+
+.user-tag { color: #1ca7ec; font-weight: 600; font-size: 14px; margin-bottom: 20px; }
+
+.info-list { border-top: 1px solid #eee; padding-top: 20px; text-align: left; }
+.info-item { display: flex; justify-content: space-between; margin-bottom: 10px; }
+
+/* Main Content Styling */
+.profile-main { flex: 2.5; display: flex; flex-direction: column; gap: 30px; }
+
+.stats-overview { display: flex; gap: 20px; }
+.p-stat-card {
+    flex: 1; background: white; padding: 25px;
+    border-radius: 20px; text-align: center;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+}
+.p-stat-card h3 { font-size: 32px; color: #18ccbc; }
+
+/* Leaderboard Styling */
+.leaderboard-section { background: white; padding: 30px; border-radius: 24px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); }
+.leaderboard-list { margin-top: 20px; display: flex; flex-direction: column; gap: 10px; }
+
+.rank-item {
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 15px 25px; border-radius: 12px; background: #f8fbff;
+}
+
+.gold { border-left: 5px solid #ffd700; }
+.silver { border-left: 5px solid #c0c0c0; }
+.bronze { border-left: 5px solid #cd7f32; }
+.current-user { background: #e0f4ff; border: 2px dashed #1ca7ec; }
+
+/* Badge Collection */
+.badge-section { background: white; padding: 30px; border-radius: 24px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); }
+.badge-grid { display: flex; gap: 20px; margin-top: 20px; }
+
+.badge-slot {
+    width: 100px; text-align: center; font-size: 12px;
+}
+
+.badge-slot span {
+    font-size: 35px; display: block; background: #f0f8ff;
+    width: 70px; height: 70px; line-height: 70px;
+    border-radius: 50%; margin: 0 auto 10px;
+}
+
+.locked { opacity: 0.3; filter: grayscale(1); }

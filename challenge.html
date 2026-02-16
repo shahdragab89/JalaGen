@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JalaGen - Water Missions</title>
+    <link rel="stylesheet" href="stylechallenge.css">
+</head>
+<body>
+
+    <nav>
+        <div class="logo-container">
+            <img src="logo.png" alt="JalaGen Logo" class="nav-logo">
+        </div>
+        <ul>
+            <li><a href="Teenager.html">Home</a></li>
+            <li><a href="teen-articles.html">Articles</a></li>
+            <li><a href="challenge.html" style="color: #18ccbc;">Challenges</a></li>
+            <li><a href="profile.html">Profile</a></li>
+        </ul>
+        <a href="login.html">
+            <button class="login-btn gradient-style">LOGOUT</button>
+        </a>
+    </nav>
+
+    <header class="challenge-header">
+        <h1>Mission Control</h1>
+        <p>Complete weekly challenges to earn points, level up, and become a Water Guardian.</p>
+    </header>
+
+    <main class="container">
+        <div class="stats-container">
+            <div class="stat-card">
+                <div class="stat-icon">🔥</div>
+                <div class="stat-value" id="streak">0</div>
+                <div class="stat-label">Level</div>
+            </div>
+
+            <div class="stat-card">
+                <div class="stat-icon">⭐</div>
+                <div class="stat-value" id="score">0</div>
+                <div class="stat-label">Total Points</div>
+            </div>
+
+            <div class="stat-card">
+                <div class="stat-icon">✅</div>
+                <div class="stat-value" id="done">0</div>
+                <div class="stat-label">Missions Done</div>
+            </div>
+        </div>
+
+        <h2 class="section-title">ACTIVE MISSIONS</h2>
+
+        <div class="challenges-grid">
+            <div class="mission-card">
+                <div class="point-badge">+15 pts</div>
+                <span class="mission-icon">🚿</span>
+                <h3>The Navy Shower</h3>
+                <p>Turn off the water while soaping up. Keep your total shower time under 5 minutes.</p>
+                <button onclick="points(this, 15)" class="gradient-style">Mark Done</button>
+            </div>
+
+            <div class="mission-card">
+                <div class="point-badge">+25 pts</div>
+                <span class="mission-icon">🔧</span>
+                <h3>Leak Detective</h3>
+                <p>Check every tap in your house. Report or help fix one dripping faucet.</p>
+                <button onclick="points(this, 25)" class="gradient-style">Mark Done</button>
+            </div>
+
+            <div class="mission-card">
+                <div class="point-badge">+30 pts</div>
+                <span class="mission-icon">🔍</span>
+                <h3>Virtual Water Hunt</h3>
+                <p>Find one product in your room and calculate its 'Virtual Water' cost using our articles.</p>
+                <button onclick="points(this, 30)" class="gradient-style">Mark Done</button>
+            </div>
+
+            <div class="mission-card">
+                <div class="point-badge">+20 pts</div>
+                <span class="mission-icon">📢</span>
+                <h3>Social Advocate</h3>
+                <p>Share a water-saving hack on your social feed to inspire other teens.</p>
+                <button onclick="points(this, 20)" class="gradient-style">Mark Done</button>
+            </div>
+            <div class="mission-card">
+    <div class="point-badge">+40 pts</div>
+    <span class="mission-icon">🍔</span>
+    <h3>Meatless Day</h3>
+    <p>Skipping one burger saves 2,500 liters of water used in grain and cattle farming. Eat plant-based today!</p>
+    <button onclick="points(this, 40)" class="gradient-style">Mark Done</button>
+</div>
+
+<div class="mission-card">
+    <div class="point-badge">+35 pts</div>
+    <span class="mission-icon">🪴</span>
+    <h3>The Greywater Hero</h3>
+    <p>Collect "greywater" (like the water used to wash fruits) and use it to water your balcony plants.</p>
+    <button onclick="points(this, 35)" class="gradient-style">Mark Done</button>
+</div>
+        </div>
+    </main>
+
+    <script src="Teenscript.js"></script>
+</body>
+</html>

@@ -3,50 +3,74 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="style-teen.css">
-    <script src="script-teen.js"></script>
+    <title>JalaGen - Teen Zone</title>
+    <link rel="stylesheet" href="home-style.css">
+    <link rel="stylesheet" href="teen-style.css">
 </head>
 <body>
-    <div>
-        <nav>
-            <ul>
-                <li><a href="Home">Home</a></li>
-                <li><a href="Games">Games</a></li>
-                <li><a href="Articles">Articles</a></li>
-                <li><a href="Challenges">Challenges</a></li>
-                <li><a href="Streak">Streak</a></li>
-                <li><a href="Profile">Profile</a></li>
-            </ul>
-        </nav>
-        <main>
-            <img src="download.jpg" alt="Future" width="600" height="400">
-            <h1>Welcome to the Game Zone!</h1>
-            <p>Get ready to explore exciting games, read interesting articles, and take on fun challenges. Your adventure starts here!</p>  
-        </main>
-    </div>
-    <div>
 
-        <div>
-    <h2>let's get started with our sections</h2>
-    <p>Explore the different sections of our website to find games, articles, and challenges that match your interests.</p>
+    <nav>
+        <div class="logo-container">
+            <img src="logo.png" alt="JalaGen Logo" class="nav-logo">
         </div>
+        <ul>
+            <li><a href="Teenager.html">Home</a></li>
+            <li><a href="Articles.html">Articles</a></li>
+            <li><a href="challenge.html">Challenges</a></li>
+            <li><a href="profile.html">Profile</a></li>
+        </ul>
+        <a href="login.html">
+            <button class="login-btn gradient-style">LOGOUT</button>
+        </a>
+    </nav>
 
-        <div>
-    <h3>Challenges</h3> <img src="challenge.png" alt="">
-    <p>Take on exciting challenges to earn points and level up your profile. Complete tasks and track your progress!</p>   
+    <section class="hero">
+        <div class="hero-text">
+            <h1>Welcome to the <br>Teen Zone!</h1>
+            <p>Get ready to read interesting articles and take on fun challenges. Your adventure starts here!</p>
         </div>
+        <div class="hero-image">
+            <img src="teenager-hello.svg" alt="Teenager Welcome Illustration">
+        </div>
+    </section>
 
-        <div> 
-    <h3>Games</h3> <img src="games.png" alt="">
-    <p>Dive into a variety of games that are both fun and educational. Challenge yourself and improve your skills!</p>
+    <section class="world-chooser background-image-section">
+        <div class="section-header">
+            <h2>LET'S GET STARTED</h2>
+            <p>Explore the sections below to start your mission.</p>
         </div>
         
-        <div>
-    <h3>Articles</h3> <img src="Articles.png" alt="">
-    <p>Read articles on various topics to expand your knowledge and stay informed about the latest trends.</p>
+        <div class="card-container">
+            <div class="card">
+                <div class="icon-img">
+                    <img src="teen-icon.svg" alt="Challenges">
+                </div>
+                <h3>CHALLENGES</h3>
+                <p>Take on exciting missions to earn points and level up your profile.</p>
+                <a href="challenge.html">
+                    <button class="gradient-style">VIEW MISSIONS</button>
+                </a>
+            </div>
+
+            <div class="card">
+                <div class="icon-img">
+                    <img src="kids-icon.svg" alt="Articles">
+                </div>
+                <h3>ARTICLES</h3>
+                <p>Read the latest trends in water conservation and lifestyle impact.</p>
+                <a href="Articles.html">
+                    <button class="gradient-style">START READING</button>
+                </a>
+            </div>
         </div>
-    </div>
-    
+    </section>
+
+    <footer>
+        <div class="footer-bottom">
+            <p>© 2026 JalaGen | Teen Mission Control</p>
+        </div>
+    </footer>
+
+    <script src="Teenscript.js"></script>
 </body>
 </html>

@@ -1,0 +1,198 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+
+/* Basic Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    color: #1a3a5f;
+    line-height: 1.6;
+    background-color: #f0f2f5; /* Clean light grey background (No Images) */
+}
+
+/* Restored Navigation Bar Style */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 8%;
+    height: 70px;
+    background-color: #f0f8ff; /* Your requested light blue */
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+}
+
+.nav-logo { max-height: 50px; width: auto; }
+nav ul { display: flex; list-style: none; gap: 30px; }
+nav ul li a { text-decoration: none; color: #1a3a5f; font-weight: 500; transition: 0.3s; }
+nav ul li a:hover { color: #18ccbc; }
+
+/* Reusable Gradient Button */
+.gradient-style {
+    background: linear-gradient(90deg, #18ccbc 0%, #1ca7ec 100%) !important;
+    color: white !important;
+    border: none !important;
+    padding: 10px 25px;
+    border-radius: 25px;
+    font-weight: 600;
+    cursor: pointer;
+    text-transform: uppercase;
+}
+
+/* Header & Typewriter Section */
+.articles-header {
+    text-align: center;
+    padding: 40px 10%;
+    background-color: #ffffff;
+}
+
+.articles-header h1 {
+    font-size: 36px;
+    color: #1a3a5f;
+}
+
+.lead {
+    color: #5a7184;
+    font-size: 16px;
+    margin-top: 10px;
+}
+
+/* Facebook-Style Feed */
+.feed-container {
+    max-width: 650px;
+    margin: 30px auto;
+    padding: 0 15px 50px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.post-card {
+    background: #ffffff;
+    border-radius: 12px;
+    padding: 20px;
+    border: 1px solid #dddfe2;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+}
+
+.post-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 15px;
+}
+
+.post-avatar {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    background: #eef2f6;
+    padding: 5px;
+}
+
+.post-meta h3 { font-size: 18px; color: #1a3a5f; }
+.post-meta span { font-size: 12px; color: #65676b; }
+
+.post-content p {
+    font-size: 15px;
+    color: #1c1e21;
+    margin-bottom: 10px;
+}
+
+.read-more-link {
+    color: #1ca7ec;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 14px;
+}
+
+.read-more-link:hover { text-decoration: underline; }
+
+/* Action Buttons Bar */
+.post-actions {
+    display: flex;
+    border-top: 1px solid #ebedf0;
+    margin-top: 15px;
+    padding-top: 10px;
+}
+
+.action-btn {
+    flex: 1;
+    background: none;
+    border: none;
+    padding: 8px;
+    cursor: pointer;
+    color: #65676b;
+    font-weight: 600;
+    border-radius: 6px;
+}
+
+.action-btn:hover { background: #f2f3f5; }
+.like-btn.liked { color: #18ccbc; }
+
+/* Share Modal Styles */
+.share-modal {
+    display: none; 
+    position: fixed;
+    z-index: 2000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.5);
+    align-items: center;
+    justify-content: center;
+}
+
+.share-modal-content {
+    background-color: #fff;
+    padding: 25px;
+    border-radius: 15px;
+    width: 320px;
+    text-align: center;
+    position: relative;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+
+.close-modal {
+    position: absolute;
+    right: 15px;
+    top: 10px;
+    font-size: 24px;
+    cursor: pointer;
+    color: #aaa;
+}
+
+.share-options {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-top: 20px;
+}
+
+.share-opt {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 10px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    font-family: 'Poppins', sans-serif;
+}
+
+.fb { background-color: #1877f2; }
+.wa { background-color: #25d366; }
+.copy { background-color: #1a3a5f; }
+
+.share-opt img { width: 20px; height: 20px; filter: brightness(0) invert(1); }
