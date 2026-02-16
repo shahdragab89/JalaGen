@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>أرض المغامرة</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            direction: rtl;
+        }
+
+        /* الخلفية */
+        .background {
+            background-image: url('map.png');
+            background-size: cover;
+            background-position: center;
+            min-height: 100vh;
+            position: relative;
+        }
+
+        /* اللوجو في الشمال - مكبر */
+        .logo {
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            z-index: 10;
+        }
+
+        .logo img {
+            max-width: 100px;
+            height: auto;
+        }
+
+        /* أيقونة البيت */
+        .home-button {
+            position: absolute;
+            top: 50.5%;
+            left: 48%;
+            transform: translate(-50%, -50%);
+            z-index: 20;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+
+        .home-button:hover {
+            transform: translate(-50%, -50%) scale(1.1);
+        }
+
+        .home-button img {
+            max-width: 310px;
+            height: auto;
+        }
+
+        /* أيقونة المطعم */
+        .restaurant-button {
+            position: absolute;
+            top: calc(40% + 78px);
+            left: 16%;
+            transform: translate(-50%, -50%);
+            z-index: 20;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+
+        .restaurant-button:hover {
+            transform: translate(-50%, -50%) scale(1.1);
+        }
+
+        .restaurant-button img {
+            max-width: 320px;
+            height: auto;
+        }
+
+        /* أيقونة السوبر ماركت الجديدة */
+        .supermarket-button {
+            position: absolute;
+            top: calc(36.5% + 78px);  /* نفس مستوى المطعم */
+            left: 81%;               /* جنب المطعم (16% + 16%) */
+            transform: translate(-50%, -50%);
+            z-index: 20;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+
+        .supermarket-button:hover {
+            transform: translate(-50%, -50%) scale(1.1);
+        }
+
+        .supermarket-button img {
+            max-width: 290px;           /* نفس حجم المطعم */
+            height: auto;
+        }
+
+        /* حاوية الكاراكتر والرسالة */
+        .character-container {
+            position: absolute;
+            top: 40px;
+            right: 40px;
+            display: flex;
+            flex-direction: row;
+            align-items: flex-start;
+            gap: 15px;
+            max-width: 600px;
+            z-index: 5;
+        }
+
+        /* صورة الكاراكتر */
+        .character img {
+            max-width: 150px;
+            height: auto;
+        }
+
+        /* رسالة الماسدج */
+        .message-bubble {
+            background-color: white;
+            border: 3px solid orange;
+            border-radius: 18px;
+            padding: 12px 18px;
+            position: relative;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            font-size: 0.95rem;
+            line-height: 1.5;
+            color: #333;
+            max-width: 300px;
+            direction: rtl;
+            text-align: right;
+        }
+
+        /* شكل الماسدج */
+        .message-bubble::after {
+            content: '';
+            position: absolute;
+            top: 20px;
+            left: -15px;
+            width: 0;
+            height: 0;
+            border: 9px solid transparent;
+            border-right-color: orange;
+            border-left: 0;
+            transform: rotate(180deg);
+        }
+
+        /* للشاشات الصغيرة */
+        @media (max-width: 992px) {
+            .character-container {
+                top: 25px;
+                right: 15px;
+            }
+            
+            .character img {
+                max-width: 120px;
+            }
+            
+            .message-bubble {
+                padding: 10px 15px;
+                font-size: 0.85rem;
+                max-width: 250px;
+            }
+
+            .home-button img {
+                max-width: 50px;
+            }
+            
+            .restaurant-button img,
+            .supermarket-button img {
+                max-width: 50px;
+            }
+            
+            .restaurant-button,
+            .supermarket-button {
+                top: calc(50.5% + 60px);
+            }
+            
+            .supermarket-button {
+                left: calc(32% + 20px); /* تعديل للشاشات المتوسطة */
+            }
+
+            .logo img {
+                max-width: 200px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .logo img {
+                max-width: 150px;
+            }
+            
+            .restaurant-button,
+            .supermarket-button {
+                top: calc(50.5% + 50px);
+            }
+            
+            .supermarket-button {
+                left: calc(32% + 15px); /* تعديل للشاشات الصغيرة */
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="background">
+        <!-- اللوجو في الشمال -->
+        <div class="logo">
+            <img src="logo.png" alt="Logo">
+        </div>
+
+        <!-- أيقونة البيت -->
+        <a href="home.html" class="home-button">
+            <img src="home-icon.png" alt="الرئيسية">
+        </a>
+
+        <!-- أيقونة المطعم -->
+        <a href="restaurant.html" class="restaurant-button">
+            <img src="restaurant-icon.png" alt="المطعم">
+        </a>
+
+        <!-- أيقونة السوبر ماركت الجديدة -->
+        <a href="Supermarket.html" class="supermarket-button">
+            <img src="supermarket-icon.png" alt="السوبر ماركت">
+        </a>
+
+        <!-- الكاراكتر والرسالة -->
+        <div class="character-container">
+            <div class="character">
+                <img src="hello-kid.png" alt="Hello Kid">
+            </div>
+            <div class="message-bubble">
+                <p>
+                    اهلا بيك في أرض المغامرة<br>
+                    دلوقتي عندنا 3 أماكن مختلفة،<br>
+                    كل مكان فيه تحدي جديد<br>
+                    وبعد ما تخلص التحدي دا<br>
+                    هتلاقي لعبة جديدة مستنياك
+                </p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

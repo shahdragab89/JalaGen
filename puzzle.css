@@ -5,7 +5,8 @@
 }
 
 body {
-    background: #84a7d4;
+    background: url("kids-bg.png") no-repeat center center;
+    background-size: cover;
     font-family: Arial, sans-serif;
     text-align: center;
     min-height: 100vh;
@@ -28,7 +29,7 @@ h1 {
 
 /* Board */
 #puzzle-board {
-    width: 70vmin;       /* كبير على حسب الشاشة */
+    width: 70vmin;      
     height: 70vmin;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -51,27 +52,32 @@ h1 {
 .cell img {
     width: 100%;
     height: 100%;
-     object-fit: fill; /* الصورة تظهر كاملة داخل كل خلية */
+    object-fit: fill;
 }
 
 /* Pieces Bar */
 .pieces-bar {
-    height: 160px;
-    background: #ffffff;
+    height: 120px;              
+    background: rgba(255,255,255,0.9);
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 10px;
-    padding: 10px;
+    padding: 15px;
     overflow-x: auto;
-    box-shadow: 0 -5px 15px rgba(0,0,0,0.2);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+    
+    border-radius: 30px;   /* مدور من كل الجوانب */
+    width: 90%;
+    margin: 20px auto;
 }
 
 .piece {
-    width: 120px;
-    height: 120px;
+    width: 90px;
+    height: 90px;
     cursor: grab;
 }
+
 
 /* Arrows */
 .arrow {
@@ -94,3 +100,5 @@ h1 {
 .arrow.right {
     right: -60px;
 }
+
+

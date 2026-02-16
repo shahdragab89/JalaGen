@@ -2,7 +2,7 @@ body {
   margin: 0;
   padding: 0;
   font-family: 'Poppins', sans-serif;
-  background-image: url('IGT LOGin backg.jpeg'); 
+  background-image: url('Untitled design.png'); 
   background-size: cover;
   background-position: center;
   background-attachment: fixed; 
@@ -149,9 +149,42 @@ button.login-btn:hover {
 }
 
 /* Hero Button Color */
-button.adventure {
+/* button.adventure {
   background: linear-gradient(to right, #2ec4b6, #1ca7ec); 
     font-size: 12px;
+} */
+
+/* Restored Pill-Shaped Button Style */
+button.login-btn.adventure {
+  width: 60%; /* Adjusted width to match the screenshot proportion */
+  padding: 12px 30px;
+  margin-top: 30px;
+  border: none;
+  border-radius: 50px; /* High value creates the rounded "pill" ends */
+  background: linear-gradient(to right, #2ec4b6, #1ca7ec); /* Matches your signup gradient */
+  color: white;
+  font-family: 'Poppins', sans-serif;
+  font-weight: bold;
+  font-size: 14px;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(28, 167, 236, 0.3);
+  display: block;
+}
+
+button.login-btn.adventure:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(28, 167, 236, 0.4);
+  opacity: 0.9;
+}
+
+/* Centers the button within the form container */
+.WRec a {
+    text-decoration: none;
+    width: 100%;
+    display: flex;
+    justify-content: center;
 }
 
 /* Container for side-by-side inputs */

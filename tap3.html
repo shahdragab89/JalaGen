@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+
+<style>
+body{
+    margin:0;
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background: url("kitchen.png") no-repeat center center;
+    background-size: cover;
+}
+
+.tap-box img{
+    width:200px;
+    transform: scaleX(-1); /* تعكس الصورة أفقياً بحيث تبص لقدام */
+    margin-top: -2px;
+    margin-left: 370px;
+}
+
+</style>
+</head>
+<body>
+    
+
+<div class="tap-box">
+    <img src="tap3.png">
+</div>
+  <!-- مربع السكور -->
+    <div id="score-display" style="
+        position: fixed;      /* ثابت فوق الشاشة */
+        top: 10px;            /* المسافة من الأعلى */
+        left: 10px;           /* المسافة من الشمال */
+        background-color: white;
+        color: black;
+        padding: 10px 20px;
+        border-radius: 20px;
+        font-weight: bold;
+        font-size: 1.2rem;
+        box-shadow: 0 0 10px rgba(0,0,0,0.3);
+        z-index: 1000;
+    ">Score: 60</div>
+
+    <script>
+        // تعيين السكور
+        let score = 150; // أو أي قيمة تبدأي بيها
+        localStorage.setItem('score', score);
+        document.getElementById('score-display').textContent = "Score: " + score;
+    </script>
+</body>
+</html>
+

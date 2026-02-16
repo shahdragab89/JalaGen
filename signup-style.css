@@ -133,3 +133,34 @@ body {
 }
 
 /* You can now remove or comment out the .logo-text class if it's no longer used */
+/* --- BUTTON FIX: Rectangular Signup Button --- */
+.login-btn.adventure {
+    width: 100%;             /* Ensures button spans the full width of the form */
+    padding: 15px 20px;
+    border-radius: 12px;     /* Fixed pixel value ensures a rectangle, not a circle */
+    background: linear-gradient(90deg, #18ccbc 0%, #1ca7ec 100%) !important;
+    color: white !important;
+    font-weight: 700;
+    font-size: 1.1rem;
+    border: none !important;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 20px;
+    text-transform: uppercase;
+    font-family: 'Poppins', sans-serif;
+    display: block;          /* Ensures it behaves as a block element */
+    box-shadow: 0 4px 15px rgba(28, 167, 236, 0.3);
+}
+
+.login-btn.adventure:hover {
+    transform: translateY(-2px);
+    opacity: 0.9;
+    box-shadow: 0 6px 20px rgba(28, 167, 236, 0.4);
+}
+
+/* Fix for the anchor tag surrounding the button */
+.WRec a {
+    text-decoration: none;
+    display: block;
+    width: 100%;
+}

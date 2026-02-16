@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+
+<style>
+body{
+    margin:0;
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background: url("kitchen.png") no-repeat center center;
+    background-size: cover;
+}
+
+/* الحاوية */
+.tap-box{
+    position: relative;
+}
+
+/* الحنفية */
+.tap-box img{
+    width:200px;
+    display:block;
+    margin-top: -60px;
+    margin-left: 340px;
+}
+
+/* شرارات كهربا حوالين الحنفية */
+.spark{
+    position:absolute;
+    width:4px;
+    height:18px;
+    background:linear-gradient(to bottom, #fff7a8, #ffd000);
+    border-radius:3px;
+    opacity:0;
+    animation: glow 1.2s infinite;
+}
+
+/* توزيع الشرارات */
+.spark:nth-child(2){
+    top:-10px; left:40%;
+}
+.spark:nth-child(3){
+    top:10px; right:-10px;
+    animation-delay:.2s;
+}
+.spark:nth-child(4){
+    bottom:15px; left:-8px;
+    animation-delay:.4s;
+}
+.spark:nth-child(5){
+    bottom:-10px; right:35%;
+    animation-delay:.6s;
+}
+.spark:nth-child(6){
+    top:35%; left:50%;
+    animation-delay:.8s;
+}
+
+@keyframes glow{
+    0%{
+        opacity:0;
+        transform:scaleY(0.5);
+    }
+    50%{
+        opacity:1;
+        transform:scaleY(1.2);
+        box-shadow:0 0 12px #ffd000;
+    }
+    100%{
+        opacity:0;
+        transform:scaleY(0.6);
+    }
+}
+
+
+
+
+
+
+
+</style>
+</head>
+<body>
+
+<div class="tap-box">
+    <img src="tap5.png">
+    <div class="spark"></div>
+    <div class="spark"></div>
+    <div class="spark"></div>
+    <div class="spark"></div>
+    <div class="spark"></div>
+</div>
+    <!-- مربع السكور -->
+    <div id="score-display" style="
+        position: fixed;      /* ثابت فوق الشاشة */
+        top: 10px;            /* المسافة من الأعلى */
+        left: 10px;           /* المسافة من الشمال */
+        background-color: white;
+        color: black;
+        padding: 10px 20px;
+        border-radius: 20px;
+        font-weight: bold;
+        font-size: 1.2rem;
+        box-shadow: 0 0 10px rgba(0,0,0,0.3);
+        z-index: 1000;
+    ">Score: 60</div>
+
+    <script>
+        // تعيين السكور
+        let score = 140; // أو أي قيمة تبدأي بيها
+        localStorage.setItem('score', score);
+        document.getElementById('score-display').textContent = "Score: " + score;
+    </script>
+
+</body>
+</html>
+

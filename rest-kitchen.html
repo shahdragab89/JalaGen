@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+<meta charset="UTF-8">
+<title>Kitchen Game</title>
+
+<style>
+body{
+    margin:0;
+    padding:0;
+    background-image:url("rest-kitchen.png");
+    background-size:cover;
+    background-position:center;
+    height:100vh;
+    font-family:Arial;
+    overflow:hidden;
+}
+
+/* سكور */
+.score{
+    position:absolute;
+    top:20px;
+    left:20px;
+    background:white;
+    padding:10px 20px;
+    border-radius:20px;
+    font-weight:bold;
+}
+
+/* الحنفية */
+.tap-div{
+    position:absolute;
+    top: 297px;
+    left:898px;
+    transform:translate(-50%,-50%);
+    width:340px;
+    height:340px;
+    background:url("tap.png") no-repeat center;
+    background-size:contain;
+    cursor:pointer;
+    /* ===== إضافة transition للحركة السلسة ===== */
+    transition: transform 0.3s ease, filter 0.3s ease;
+    /* ========================================= */
+}
+
+/* ===== تأثير hover للحنفية ===== */
+.tap-div:hover{
+    /* تكبير الصورة قليلاً */
+    transform: translate(-50%,-50%) scale(1.1);
+    /* إضافة توهج خفيف (اختياري) */
+    filter: drop-shadow(0 0 15px rgba(255,215,0,0.5));
+    /* drop-shadow أحسن من box-shadow للصور الشفافة PNG */
+}
+/* ============================== */
+
+/* الشريط الأبيض */
+.menu{
+    position:absolute;
+    bottom:50px;
+    left:50%;
+    transform:translateX(-50%);
+    background:white;
+    padding:20px 40px;
+    border-radius:50px;
+    display:none;
+    gap:40px;
+}
+
+/* كل عنصر */
+.item{
+    text-align:center;
+    cursor:pointer;
+}
+
+/* الصور كـ div */
+.item-img{
+    width:80px;
+    height:80px;
+    background-size:contain;
+    background-repeat:no-repeat;
+    background-position:center;
+    margin:auto;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.price{
+    font-weight:bold;
+    margin-top:5px;
+}
+
+/* تأثير hover لصور الأكل */
+.item-img:hover{
+    transform: scale(1.2);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+    cursor: pointer;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="score">Score: 200</div>
+
+<div class="tap-div" onclick="showMenu()"></div>
+
+<div class="menu" id="menu">
+
+    <div class="item" onclick="goTo('tap2.html')">
+        <div class="item-img" style="background-image:url('tap2.png');"></div>
+        <div class="price">30</div>
+    </div>
+
+    <div class="item" onclick="goTo('tap3.html')">
+        <div class="item-img" style="background-image:url('tap3.png');"></div>
+        <div class="price">50</div>
+    </div>
+
+    <div class="item" onclick="goTo('tap4.html')">
+        <div class="item-img" style="background-image:url('tap4.png');"></div>
+        <div class="price">40</div>
+    </div>
+
+    <div class="item" onclick="goTo('tap5.html')">
+        <div class="item-img" style="background-image:url('tap5.png');"></div>
+        <div class="price">60</div>
+    </div>
+
+</div>
+
+<script>
+function showMenu(){
+    document.getElementById("menu").style.display="flex";
+}
+
+function goTo(page){
+    window.location.href = page;
+}
+</script>
+
+</body>
+</html>

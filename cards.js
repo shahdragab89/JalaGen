@@ -32,8 +32,7 @@ window.onload = function() {
     firstCard=null; secondCard=null; lock=false; matches=0;
     score=0; scoreDisplay.innerText=score;
 
-    let gameCards = [];
-    images.forEach(img=>gameCards.push(img,img));
+   let gameCards = shuffle([...images]);
     shuffle(gameCards).forEach(imgName=>{
       const card = document.createElement("div");
       card.className = "card";
@@ -62,7 +61,7 @@ window.onload = function() {
       score++; matches++;
       scoreDisplay.innerText=score;
       resetCards();
-      if(matches===images.length){
+      if (matches === images.length / 2) {
         winMessage.classList.add("show");
         clearInterval(timer);
       }
