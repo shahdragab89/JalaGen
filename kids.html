@@ -1,164 +1,125 @@
 <!DOCTYPE html>
-<html lang="ar">
+<html lang="ar" dir="rtl">
 <head>
-<meta charset="UTF-8">
-<title>عالم المياه</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JalaGen - عالم الأطفال</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@700;900&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bright-pink: #ff5e91;
+            --sunny-yellow: #d4e157;
+        }
+        
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            width: 100%;
+            font-family: 'Cairo', sans-serif;
+            overflow: hidden; 
+        }
 
-<style>
-body {
-    margin: 0;
-    font-family: 'Comic Sans MS', cursive;
-    background: url("kids-bg.png") no-repeat center center;
-    background-size: cover;
-    overflow-x: hidden;
-    text-align: center;
-    min-height: 100vh;
-    position: relative;
-}
+        /* 1. FIXED BACKGROUND - Updated to match your filename */
+        .background-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            /* Update 'kids-bg.jpg' to exactly match the name in your folder */
+            background-image: url('kids-bg.png'); 
+            background-size: cover; /* 'cover' ensures no gaps, '100% 100%' forces stretch */
+            background-position: center bottom;
+            background-repeat: no-repeat;
+            z-index: -1;
+        }
 
-/* حركة بسيطة */
-.float {
-    animation: float 4s ease-in-out infinite;
-}
-@keyframes float {
-    0% { transform: translateY(0); }
-    50% { transform: translateY(-12px); }
-    100% { transform: translateY(0); }
-}
+        .main-wrapper {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            width: 100vw;
+            position: relative;
+        }
 
-/* العنوان */
-header {
-    padding: 70px 20px 30px;
-}
-h1 {
-    font-size: 42px;
-    color: #01579b;
-}
-p {
-    font-size: 18px;
-    color: #0277bd;
-}
+        .hero-text-area {
+            text-align: center;
+            margin-bottom: 5vh;
+            text-shadow: 2px 2px 10px rgba(255, 255, 255, 0.9);
+            z-index: 5;
+        }
 
-/* صورة الشخصية */
-.kid-character {
-    position: absolute;
-    right: 40px;
-    bottom: 80px;
-    width: 200px;
-}
+        h1 {
+            color: #1a5a92;
+            font-size: 8vh;
+            margin: 0;
+            font-weight: 900;
+        }
 
-/* قسم الفيديوهات */
-.videos {
-    background: white;
-    width: 85%;
-    margin: auto;
-    padding: 40px;
-    border-radius: 30px;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
-}
+        p {
+            color: #4facfe;
+            font-size: 4vh;
+            margin: 0;
+            font-weight: 700;
+        }
 
-.cards {
-    display: flex;
-    justify-content: center;
-    gap: 40px;
-    margin-top: 30px;
-    flex-wrap: wrap;
-}
+        /* 3. Character stays exactly as you had it */
+        .corner-character {
+            position: absolute;
+            bottom: -2vh; 
+            right: -2vw; 
+            width: 45vw; 
+            max-width: 600px; 
+            height: auto;
+            z-index: 10;
+            animation: bounce-soft 4s ease-in-out infinite;
+        }
 
-.card {
-    width: 240px;
-    height: 190px;
-    background: linear-gradient(#4fc3f7, #81d4fa);
-    border-radius: 30px;
-    color: white;
-    text-decoration: none;
-    font-size: 22px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    box-shadow: 0 10px 0 #0288d1;
-    transition: 0.3s;
-}
+        @keyframes bounce-soft {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-2vh); }
+        }
 
-.card span {
-    font-size: 50px;
-    margin-bottom: 10px;
-}
+        .start-btn {
+            background: linear-gradient(90deg, var(--bright-pink), var(--sunny-yellow));
+            color: white;
+            border: 0.8vh solid white;
+            padding: 2vh 8vw;
+            font-size: 4vh;
+            font-weight: 900;
+            border-radius: 10vh;
+            cursor: pointer;
+            box-shadow: 0 1.5vh 3vh rgba(255, 94, 145, 0.4);
+            transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            text-decoration: none;
+            display: inline-block;
+            position: relative;
+            z-index: 5;
+        }
 
-.card:hover {
-    transform: translateY(-10px) scale(1.05);
-    box-shadow: 0 18px 0 #0288d1;
-}
-
-/* موجة */
-.wave {
-    margin-top: 70px;
-    height: 150px;
-    background: #4fc3f7;
-    border-radius: 100% 100% 0 0;
-}
-
-/* فقاعات */
-.bubble {
-    position: absolute;
-    bottom: -40px;
-    background: rgba(255,255,255,0.6);
-    border-radius: 50%;
-    animation: bubbles 7s linear infinite;
-}
-@keyframes bubbles {
-    from { transform: translateY(0); opacity: 1; }
-    to { transform: translateY(-500px); opacity: 0; }
-}
-</style>
+        .start-btn:hover {
+            transform: scale(1.1);
+            box-shadow: 0 2vh 4vh rgba(255, 94, 145, 0.5);
+        }
+    </style>
 </head>
 
 <body>
 
-<header>
-    <h1>🌊 عالم المياه 🌊</h1>
-    <p>تعلم – شاهد – استمتع</p>
-</header>
+    <div class="background-container"></div>
+    <div class="main-wrapper">
+        <div class="hero-text-area">
+            <h1>أهلاً بك!</h1>
+            <p>مستعد للمغامرة في عالم المياه؟</p>
+        </div>
+        
+        <a href="kids-start.html" class="start-btn">ابدأ الآن !</a>
 
-<section class="videos">
-    <h2>📺 قسم الفيديوهات</h2>
+        <img src="hello-kid.png" alt="Waving Drop" class="corner-character">
 
-    <div class="cards">
-        <a href="awareness.html" class="card">
-            <span>🎥</span>
-            فيديوهات توعية
-        </a>
-
-        <a href="stories.html" class="card">
-            <span>📖</span>
-            حكاية قصص
-        </a>
     </div>
-</section>
-
-<div class="wave"></div>
-
-<!-- صورة الشخصية -->
-<img src="hello-kid.png" class="kid-character float">
-
-<script>
-/* فقاعات مية */
-function bubble() {
-    const b = document.createElement("div");
-    b.className = "bubble";
-
-    const size = Math.random() * 30 + 15;
-    b.style.width = size + "px";
-    b.style.height = size + "px";
-    b.style.left = Math.random() * 100 + "%";
-
-    document.body.appendChild(b);
-
-    setTimeout(() => b.remove(), 7000);
-}
-
-setInterval(bubble, 700);
-</script>
-
 </body>
 </html>
